@@ -1,4 +1,4 @@
-import { initialTasks } from "./initialData.js";
+import { initialTasks } from "../initialData.js";
 
 // Wait until DOM is fully loaded
 window.addEventListener("load", initTaskBoard);
