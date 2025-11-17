@@ -344,10 +344,10 @@ form select {
   }
 
   #btn-addnewtask-mobile {
-    margin-bottom: 5px;
+    padding-bottom: 5px;
     display: revert;
-    width: 30px;
-    height: 30px;
+    width: 33px;
+    height: 33px;
     font-family: inherit;
     font-weight: bold;
     border: none;
