@@ -78,7 +78,7 @@
           <label for="task-title">Title</label>
           <input type="text" id="task-title" name="title" required/>
           <label for="task-descrip">Description</label>
-          <textarea id="task-descrip" row="4" name="sescription"></textarea>
+          <textarea id="task-descrip" row="4" name="description"></textarea>
           <label for="task-status">Status</label>
           <select id="task-status" name="status" required>
             <option value="todo">todo</option>
@@ -89,12 +89,23 @@
      </dialog>
 
      <!-- Modal for ADDING NEW tasks-->
-      <dialog id="new-task-modal">
-        <form id="new-task-form">
-            <div id="new-task-header">
-                <h3 id="">Add New Task</h3>
+      <dialog id="addtask-modal">
+        <form method="dialog" id="addtask-form">
+            <div id="addtask-header">
+                <h3>Add New Task</h3>
                 <span class="close-btn" id="cancel-add-btn">&times;</span>
             </div>
+            <label for="addtask-title">Title</label>
+            <input type="text" id="addtask-title" placeholder="e.g. Take a study break" name="title" required/>
+            <label for="addtask-descrip">Description</label>
+            <textarea id="addtask-descrip" row="4" placeholder="e.g. Take a study break" name="description"></textarea>
+            <label for="addtask-status">Status</label>
+            <select id="addtask-status" name="status" required>
+                <option value="todo">todo</option>
+                <option value="doing">doing</option>
+                <option value="done">done</option>
+            </select>
+            <button type="submit" id="btn-create-task">Create Task</button>
         </form>
       </dialog>
   </body>
