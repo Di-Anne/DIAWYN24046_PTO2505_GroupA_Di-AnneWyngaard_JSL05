@@ -88,6 +88,8 @@ body {
 /* =========== Header Section =========== */
 .launch-header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0 35px 0 30px;
   background-color: var(--background-white-color);
   height: 97px;
@@ -97,6 +99,22 @@ body {
 .launch-header-div {
   display: flex;
   align-items: center;
+}
+
+#btn-addnewtask {
+  font-family: inherit;
+  font-weight: bold;
+  border: none;
+  border-radius: 100px;
+  width: 160px;
+  height: 48px;
+  color: var(--background-white-color);
+  background: var(--main-theme-color);
+  cursor: pointer;
+}
+
+#btn-addnewtask-mobile {
+  display: none;
 }
 
 .favicon-mobile {
@@ -317,6 +335,28 @@ form select {
     display: revert;
   }
 
+  .launch-title {
+    display: none;
+  }
+
+  #btn-addnewtask {
+    display: none;
+  }
+
+  #btn-addnewtask-mobile {
+    margin-bottom: 5px;
+    display: revert;
+    width: 30px;
+    height: 30px;
+    font-family: inherit;
+    font-weight: bold;
+    border: none;
+    border-radius: 100px;
+    color: var(--background-white-color);
+    background: var(--main-theme-color);
+    cursor: pointer;
+  }
+  
   .tasks-grid {
     grid-template-columns: minmax(0, 380px); /*Stack columns in a single column on mobile view*/
   }
