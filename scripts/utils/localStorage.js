@@ -14,16 +14,16 @@ export function saveTasksToStorage(tasks) {
  * @returns {Array<Object>} the array of tasks
  */
 export function getTasksFromStorage() {
-  const stored = localStorage.getItem("tasks");
-  if (stored) {
+  const storedTasks = localStorage.getItem("tasks");
+  if (storedTasks) {
     try {
-      return JSON.parse(stored);
-    } catch (err) {
-      console.error("Error parsing tasks from localStorage:", err);
+      return JSON.parse(storedTasks);
+    } catch(error) {
+      console.error("Error parsing JSON:", error)
     }
   }
-
-  // No tasks in storage then initialize with initialTasks
+ 
+  // No tasks in storage then initialize with default data: initialTasks
   localStorage.setItem("tasks", JSON.stringify(initialTasks));
   return initialTasks;
 }
