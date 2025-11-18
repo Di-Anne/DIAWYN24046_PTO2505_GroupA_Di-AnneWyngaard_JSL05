@@ -39,6 +39,15 @@ function renderTasks(tasks) {
     });
 }
 
-removeExistingTaskDivs ();
-renderTasks(initialTasks);
-closeTaskModal();
+/**
+ * Initializes task-board 
+ */
+function initTaskBoard() {
+    removeExistingTaskDivs ();
+    renderTasks(initialTasks);
+    closeTaskModal();
+}
+
+// Initialize taskBoard after DOM has fully loaded
+window.addEventListener("load", initTaskBoard());
+
