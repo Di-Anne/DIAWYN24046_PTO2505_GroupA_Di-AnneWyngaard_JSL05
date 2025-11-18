@@ -2,7 +2,7 @@
 
 /**
  * Creates a single task div element in DOM
- * @param {Object} task - new task object
+ * @param {Object} task - task object
  * @returns {HTML element} The created task element
  */
 export function createNewTaskElement(task) {

@@ -1,4 +1,4 @@
-
+import { createNewTaskElement } from "/taskElement.js"
 
 /**
  * Finds the task container based on status
@@ -21,10 +21,19 @@ function getColumnByStatus (status) {
  * Remove all existing task divs from its task container
  */
 function removeExistingTaskDivs () {
-    initialTasks.forEach((taskContainer) => {
-        taskContainer.innerHTML = "";
+    document.querySelectorAll('.task-container').forEach((container) => {
+        container.innerHTML = "";
     });
 }
 
+/**
+ * Append created task div to its parent task container 
+ * @param {Object} task - task object
+ */
+function appendTaskDiv(task) {
+    getColumnByStatus(task.status).appendChild(createNewTaskElement(task));
+}
 
-
+function renderTasks () {
+    
+}
