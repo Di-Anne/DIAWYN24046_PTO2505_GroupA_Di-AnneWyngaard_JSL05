@@ -10,7 +10,7 @@ export function saveTasksToStorage(tasks) {
 }
 
 /**
- * Gets tasks from LocalStorage or initializes with initialTasks if no tasks in storage
+ * Gets tasks from LocalStorage 
  * @returns {Array<Object>} the array of tasks
  */
 export function getTasksFromStorage() {
@@ -22,7 +22,6 @@ export function getTasksFromStorage() {
       console.error("Error parsing JSON:", error)
     }
   }
- 
   // No tasks in storage then initialize with default data: initialTasks
   localStorage.setItem("tasks", JSON.stringify(initialTasks));
   return initialTasks;
