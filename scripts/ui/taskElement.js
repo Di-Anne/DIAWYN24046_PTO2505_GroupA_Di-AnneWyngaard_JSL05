@@ -1,17 +1,17 @@
 
 
 /**
- * Creates a single task element in DOM
+ * Creates a single task div element in DOM
  * @param {Object} task - new task object
  * @returns the created task element
  */
-function createNewTaskElement(task) {
-    const taskNewElement = createElement('div');
-    taskNewElement.className = "task-div";
-    taskNewElement.textContent = task.title;
+export function createNewTaskElement(task) {
+    const taskDiv = createElement('div');
+    taskDiv.className = "task-div";
+    taskDiv.textContent = task.title;
 
-    taskNewElement.addEventListener('click', () => {
+    taskDiv.addEventListener('click', () => {
         openNewTaskModal(task);
     });
-    return taskNewElement;
+    return taskDiv;
 }
