@@ -5,13 +5,13 @@
  * @param {Object} task - task object
  * @returns {HTML element} The created task element
  */
-export function createNewTaskElement(task) {
-    const taskDiv = createElement('div');
+export function createTaskElement(task) {
+    const taskDiv = document.createElement('div');
     taskDiv.className = "task-div";
     taskDiv.textContent = task.title;
 
     taskDiv.addEventListener('click', () => {
-        openNewTaskModal(task);
+        openTaskModal(task);
     });
     return taskDiv;
 }
