@@ -22,7 +22,7 @@ export function getTasksFromStorage() {
       console.error("Error parsing JSON:", error)
     }
   }
-  // No tasks in storage then initialize with default data: initialTasks
+  // No tasks in storage then initialize storage with default data: initialTasks
   localStorage.setItem("tasks", JSON.stringify(initialTasks));
   return initialTasks;
 }
