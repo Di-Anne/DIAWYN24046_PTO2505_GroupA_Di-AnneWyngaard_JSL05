@@ -1,4 +1,6 @@
+import { initialTasks } from "../../initialData.js";
 import { createTaskElement } from "./taskElement.js";
+import { closeTaskModal } from "./modalHandlers.js";
 
 /**
  * Finds the task container based on status
@@ -37,3 +39,6 @@ function renderTasks(tasks) {
     });
 }
 
+removeExistingTaskDivs ();
+renderTasks(initialTasks);
+closeTaskModal();
