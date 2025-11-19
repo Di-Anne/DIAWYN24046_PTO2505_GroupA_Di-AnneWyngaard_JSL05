@@ -1,13 +1,11 @@
-import { initialTasks } from "../../initialData.js";
 import { createTaskElement } from "./taskElement.js";
-import { closeTaskModal } from "./modalHandlers.js";
 
 /**
  * Finds the task container based on status
  * @param {string} status - status of task object
  * @returns {HTML element} The container of the task or null if not found
  */
-function getContainerByStatus (status) {
+function getTaskContainerByStatus (status) {
     //Get column by status
     const columnDiv = document.querySelector(`.column-div[data-status="${status}"]`);
     if (!columnDiv) {
@@ -20,9 +18,9 @@ function getContainerByStatus (status) {
 }
 
 /**
- * Remove all existing task-divs from its task container
+ * Remove all existing task-divs from its task container to prevent duplicates
  */
-function removeExistingTaskDivs () {
+export function removeExistingTaskDivs () {
     document.querySelectorAll('.task-container').forEach((container) => {
         container.innerHTML = "";
     });
@@ -31,23 +29,13 @@ function removeExistingTaskDivs () {
 /**
  * Renders ALL tasks to their appropriate columns
  */
-function renderTasks(tasks) {
+ export function renderTasks(tasks) {
     tasks.forEach((task) => {
-        const taskContainer = getContainerByStatus(task.status);
+        const taskContainer = getTaskContainerByStatus(task.status);
         const taskDiv = createTaskElement(task);
         taskContainer.appendChild(taskDiv);
     });
 }
 
-/**
- * Initializes task-board 
- */
-function initTaskBoard() {
-    removeExistingTaskDivs ();
-    renderTasks(initialTasks);
-    closeTaskModal();
-}
 
-// Initialize taskBoard after DOM has fully loaded
-window.addEventListener("load", initTaskBoard());
 
