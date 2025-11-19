@@ -1,4 +1,4 @@
-
+import { addNewTask } from "../tasks/newTaskManager.js";
 /**
  * Opens modal and shows pre-filled details
  * @param {Object} task - task object to dsiplay in modal
@@ -11,36 +11,31 @@ export function openTaskModal (task) {
     modal.showModal();
 }
 
- export function closeTaskModal() {
+export function closeTaskModal() {
     const modal = document.getElementById('task-modal');
     const closeModalBtn = document.getElementById('close-btn');
-
     closeModalBtn.addEventsListener('click', () => {
         modal.close();
     });
 }
 
-export function openNewTaskModal() {
-    const addNewTaskBtn1 = document.getElementById('btn-addnewtask');
-    const addNewTaskBtn2 = document.getElementById('btn-addnewtask');
-
-    addNewTaskBtn1.addEventListener('click', () => {
-        const newModal = document.getElementById('addtask-modal');
+export function newTaskModalHandler() {
+    const newModal = document.getElementById('addtask-modal');
+    const newTaskBtn = document.getElementById('btn-addnewtask');
+    const newTaskForm = document.getElementById('addtask-form');
+    const newTaskCloseBtn = document.getElementById('cancel-addTask-btn');
+    
+    newTaskBtn.addEventListener('click', () => {
         newModal.showModal();
     });
 
-    addNewTaskBtn2.addEventListener('click', () => {
-        const newModal = document.getElementById('addtask-modal');
-        newModal.showModal();
-    });    
-}
+    newTaskForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        addNewTask();
+    })
 
-export function closeNewTaskModal() {
-    const closeNewTaskModalBtn = document.getElementById('cancel-addTask-btn');
-    
-    closeNewTaskModalBtn.addEventListener('click', () => {
-        const newModal = document.getElementById('addtask-modal');
-        newModal.close();
+    newTaskCloseBtn.addEventListener('click', () => {
+        newModal.close();    
     });
-    
+
 }

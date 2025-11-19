@@ -10,8 +10,7 @@ function initializeTaskBoard() {
     removeExistingTaskDivs ();
     renderTasks(storedTasks);
     closeTaskModal();
-    openNewTaskModal();
-    closeNewTaskModal();
+    newTaskModalHandler()
 }
 
 // Initialize taskBoard after DOM has fully loaded
