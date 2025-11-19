@@ -21,7 +21,6 @@ export function openTaskModal (task) {
 }
 
 export function openNewTaskModal() {
-    
     const addNewTaskBtn1 = document.getElementById('btn-addnewtask');
     const addNewTaskBtn2 = document.getElementById('btn-addnewtask');
 
@@ -34,4 +33,14 @@ export function openNewTaskModal() {
         const newModal = document.getElementById('addtask-modal');
         newModal.showModal();
     });    
+}
+
+export function closeNewTaskModal() {
+    const closeNewTaskModalBtn = document.getElementById('cancel-addTask-btn');
+    
+    closeNewTaskModalBtn.addEventListener('click', () => {
+        const newModal = document.getElementById('addtask-modal');
+        newModal.close();
+    });
+    
 }
