@@ -1,17 +1,19 @@
 import { removeExistingTaskDivs, renderTasks } from "./ui/render.js";
 import { closeTaskModal } from "./ui/modalHandlers.js";
+import { getTasksFromStorage } from "./utils/localStorage.js";
 
 /**
  * Initializes task-board 
  */
-function initTaskBoard() {
+function initializeTaskBoard() {
+    const storedTasks = getTasksFromStorage();
     removeExistingTaskDivs ();
     renderTasks(storedTasks);
     closeTaskModal();
 }
 
 // Initialize taskBoard after DOM has fully loaded
-window.addEventListener("load", initTaskBoard());
+window.addEventListener("load", initializeTaskBoard());
 
 
 
