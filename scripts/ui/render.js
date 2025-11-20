@@ -19,7 +19,7 @@ function getTaskContainerByStatus (status) {
 /**
  * Remove all existing task-divs from its task container to prevent duplicates
  */
-export function removeExistingTaskDivs () {
+export function removeExistingTaskDivs() {
     document.querySelectorAll('.task-container').forEach((container) => {
         container.innerHTML = "";
     });

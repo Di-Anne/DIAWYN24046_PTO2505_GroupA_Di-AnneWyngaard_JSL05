@@ -1,6 +1,6 @@
 import { getTasksFromStorage,  saveTasksToStorage } from "../utils/localStorage.js";
-import { getTaskContainerByStatus } from "../ui/render.js";
-import { createTaskElement } from "../ui/taskElement.js";
+import { removeExistingTaskDivs, renderTasks } from "../ui/render.js";
+
 
 
 export function addNewTask() {
@@ -10,27 +10,27 @@ export function addNewTask() {
     const selectStatus = document.getElementById('addtask-status');
     
     const storedTasks = getTasksFromStorage();
-    //Push new task inputs to initial array (all tasks) already in memory.
     const newTask = {
         id: Math.max(...tasks.map(t => t.id)) + 1, //Find maximun existing id in initial tasks array then increment when new task added/ every new task gets an id greater than the existing one
         title: inputTitle.value.trim(),
         description: inputDescrip.value.trim(),
         status: selectStatus.value,
     }   
-    const updatedTasks = storedTasks.push(newTask);
 
+    //Add new task inputs to initial array (all tasks) already in memory= forming new array
+    const updatedTasks = [...storedTasks, newTask]; //WHY? Why not modify original array and push new task instead?
+    
     // Save the updated tasks array to localStorage
     saveTasksToStorage(updatedTasks);
-}
 
- // Re-render: create task div element and append it to correct column based on status
-export function renderTasks(tasks) {
-    tasks.forEach((task) => {
-        const taskDivElement = createTaskElement(task);
-        const taskContainer = getTaskContainerByStatus (task.status);
+    const updatedTaskList = getTasksFromStorage();
 
-        taskContainer.appendChild(taskDivElement);
-    })
 
+
+
+    
+    // Remove all existing task divs before rendering to prevent duplicates/ overflow
+    removeExistingTaskDivs();
+    renderTasks(updatedTaskList);
     modalNew.close();
 }
