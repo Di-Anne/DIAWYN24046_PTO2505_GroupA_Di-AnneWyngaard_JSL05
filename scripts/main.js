@@ -1,6 +1,7 @@
 import { removeExistingTaskDivs, renderTasks } from "./ui/render.js";
-import { openTaskModal, closeTaskModal, newTaskModalHandler } from "./ui/modalHandlers.js";
+import { closeTaskModal, newTaskModalHandler } from "./ui/modalHandlers.js";
 import { getTasksFromStorage } from "./utils/localStorage.js";
+import { renderTasks } from "./tasks/newTaskManager.js";
 
 /**
  * Initializes task-board 
