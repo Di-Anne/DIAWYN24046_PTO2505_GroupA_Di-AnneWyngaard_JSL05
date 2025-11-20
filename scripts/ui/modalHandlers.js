@@ -1,5 +1,13 @@
 import { addNewTask } from "../tasks/newTaskManager.js";
 
+export function closeTaskModal() {
+    const modal = document.getElementById('task-modal');
+    const closeModalBtn = document.getElementById('close-btn');
+    closeModalBtn.addEventsListener('click', () => {
+        modal.close();
+    });
+}
+
 export function newTaskModalHandler() {
     const newModal = document.getElementById('addtask-modal');
     const newTaskBtn = document.getElementById('btn-addnewtask');
@@ -8,6 +16,10 @@ export function newTaskModalHandler() {
     
     newTaskBtn.addEventListener('click', () => {
         newModal.showModal();
+    });
+
+    newTaskCloseBtn.addEventListener('click', () => {
+        newModal.close();
     });
 
     newTaskForm.addEventListener('submit', (event) => {
@@ -19,14 +31,9 @@ export function newTaskModalHandler() {
             newTaskForm.reportValidity();
         }
     });
-
-    newTaskCloseBtn.addEventListener('click', () => {
-        newModal.close();    
-    });
 }
 
-
-export function openTaskModal (task) {
+export function openTaskModal(task) {
     const modal = document.getElementById('task-modal');
     document.getElementById('task-title').value = task.title;
     document.getElementById('task-descrip').value = task.description;
@@ -34,11 +41,5 @@ export function openTaskModal (task) {
     modal.showModal();
 }
 
-export function closeTaskModal() {
-    const modal = document.getElementById('task-modal');
-    const closeModalBtn = document.getElementById('close-btn');
-    closeModalBtn.addEventsListener('click', () => {
-        modal.close();
-    });
-}
+
 
