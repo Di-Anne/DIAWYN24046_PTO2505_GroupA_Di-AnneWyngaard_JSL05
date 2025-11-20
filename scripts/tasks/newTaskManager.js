@@ -1,5 +1,6 @@
 import { getTasksFromStorage,  saveTasksToStorage } from "../utils/localStorage.js";
 import { removeExistingTaskDivs, renderTasks } from "../ui/render.js";
+import { resetForm } from "./form.js";
 
 
 
@@ -19,18 +20,13 @@ export function addNewTask() {
 
     //Add new task inputs to initial array (all tasks) already in memory= forming new array
     const updatedTasks = [...storedTasks, newTask]; //WHY? Why not modify original array and push new task instead?
-    
+
     // Save the updated tasks array to localStorage
     saveTasksToStorage(updatedTasks);
 
-    const updatedTaskList = getTasksFromStorage();
-
-
-
-
-    
     // Remove all existing task divs before rendering to prevent duplicates/ overflow
     removeExistingTaskDivs();
-    renderTasks(updatedTaskList);
+    renderTasks(updatedTasks);
+    resetForm();
     modalNew.close();
 }
