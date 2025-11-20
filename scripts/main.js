@@ -14,7 +14,7 @@ function initializeTaskBoard() {
 }
 
 // Initialize taskBoard after DOM has fully loaded
-window.addEventListener("load", initializeTaskBoard());
+window.addEventListener("load", initializeTaskBoard);
 
 
 
