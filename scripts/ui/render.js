@@ -11,7 +11,6 @@ function getTaskContainerByStatus (status) {
     if (!columnDiv) {
         return null;
     }
-
     //Now get the task container of that column to append task div later
     const taskContainer = columnDiv.querySelector(".task-container");
     return taskContainer;

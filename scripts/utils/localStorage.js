@@ -2,7 +2,7 @@ import { initialTasks } from "../../initialData.js";
 
 /**
  * Saves task array to localStorage
- * @param {Array<Object>} tasks 
+ * @param {Array<Object>} tasks - The array of tasks
  */
 
 export function saveTasksToStorage(tasks) {
