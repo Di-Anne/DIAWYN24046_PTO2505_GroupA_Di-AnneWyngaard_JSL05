@@ -69,7 +69,7 @@
       </div>
     </div>
     <!-- Modal for tasks when task cards clicked-->
-     <dialog id="task-modal">
+     <dialog class= "task-modal" id="task-modal">
         <form method="dialog" id="task-form">
           <div class="modal-header" id="modal-header">
             <h3>Task</h3>
@@ -89,23 +89,29 @@
      </dialog>
 
      <!-- Modal for adding NEW tasks-->
-      <dialog id="addtask-modal">
-        <form method="dialog" id="addtask-form">
+      <dialog class= "task-modal" id="addtask-modal">
+        <form method="dialog" class= "addtask-form" id="addtask-form">
             <div class= "modal-header" id="addtask-header">
                 <h3>Add New Task</h3>
                 <button class="close-btn" id="cancel-addTask-btn">&times;</button>
             </div>
-            <label for="addtask-title">Title</label>
-            <input type="text" id="addtask-title" placeholder="e.g. Take a study break" name="title" required/>
-            <label for="addtask-descrip">Description</label>
-            <textarea id="addtask-descrip" row="4" placeholder="e.g. Take a study break" name="description"></textarea>
-            <label for="addtask-status">Status</label>
-            <select id="addtask-status" name="status" required>
-                <option value="todo">todo</option>
-                <option value="doing">doing</option>
-                <option value="done">done</option>
-            </select>
-            <button type="submit" id="btn-create-task">Create Task</button>
+            <div class="title-input-div">
+              <label for="addtask-title">Title</label>
+              <input type="text" id="addtask-title" placeholder="e.g. Take a break" name="title" required/>
+            </div>
+            <div class="descript-input-div">
+              <label for="addtask-descrip">Description</label>
+              <textarea id="addtask-descrip" row="4" placeholder="e.g. Go for a walk in nature 🌳" name="description"></textarea>
+            </div>
+            <div class="status-div">
+              <label for="addtask-status">Status</label>
+              <select id="addtask-status" name="status" required>
+                  <option value="todo">todo</option>
+                  <option value="doing">doing</option>
+                  <option value="done">done</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-create-task" id="btn-create-task">Create Task</button>
         </form>
       </dialog>
   </body>
