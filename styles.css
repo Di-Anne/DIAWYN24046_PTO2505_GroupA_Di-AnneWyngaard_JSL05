@@ -229,19 +229,19 @@ dialog {
 }
 
 /* Header */
-#modal-header {
+.modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
 }
 
-#modal-header h3 {
+.modal-header h3 {
   margin: 0;
   font-size: 1.125rem;
 }
 
-#close-btn {
+.close-btn {
   background: none;
   border: none;
   font-size: 2.5rem;
@@ -252,12 +252,12 @@ dialog {
   transition-delay: 0.05s; /* Delay before scaling */
 }
 
-#close-btn:hover {
+.close-btn:hover {
   transform: scale(1.15);
   font-weight: 600;
 }
 
-#close-btn:focus {
+.close-btn:focus {
   outline: none;
 }
 
@@ -329,6 +329,15 @@ form select {
   font-weight: 600;
   cursor: pointer;
   flex-grow: 1; /* Allows the button to grow and fill the space */
+}
+
+#addtask-descrip {
+  font-size: 16px;
+  color: var(--main-text-color);
+  height: 90px;
+  padding: 10px;
+  border-radius: 4px;
+  resize: vertical;
 }
 
 /* =========== Responsive styles =========== */
