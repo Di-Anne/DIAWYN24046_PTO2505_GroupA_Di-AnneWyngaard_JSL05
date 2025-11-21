@@ -224,7 +224,7 @@ dialog {
   width: 90%;
   max-width: 600px;
   padding: 24px;
-  background-color: #fff;
+  background-color: var(--background-white-color);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -291,6 +291,30 @@ form select {
   background-size: 1.4rem;
   padding-right: 1rem;
   cursor: pointer;
+}
+
+/***** New task Modal ******/
+#addtask-modal::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#addtask-form {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px;
+  padding: 24px;
+  gap: 20px;
+  background-color: var(--background-white-color);
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 10px;
+  z-index: 3;
+  transition: all 0.3s ease-in;
 }
 
 /* =========== Responsive styles =========== */
