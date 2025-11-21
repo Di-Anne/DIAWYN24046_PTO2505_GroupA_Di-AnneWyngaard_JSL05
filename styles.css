@@ -317,6 +317,20 @@ form select {
   transition: all 0.3s ease-in;
 }
 
+#btn-create-task {
+  background-color: var(--main-theme-color);
+  color: var(--background-white-color);
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  padding: 14px;
+  padding-left: 35px;
+  padding-right: 35px;
+  font-weight: 600;
+  cursor: pointer;
+  flex-grow: 1; /* Allows the button to grow and fill the space */
+}
+
 /* =========== Responsive styles =========== */
 @media (max-width: 1023px) {
   .side-nav-bar {
