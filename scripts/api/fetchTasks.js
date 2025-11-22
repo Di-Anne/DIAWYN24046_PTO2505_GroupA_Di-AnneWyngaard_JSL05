@@ -4,7 +4,7 @@ const API_URL = "https://jsl-kanban-api.vercel.app/";
 let initialTasks;
 
 /**
- * Fetches initial task data from a given API and populate empty initialTasks array
+ * Fetches initial task data from a given API and populate empty initialTasks array, saves array to localStorage
  * @returns - populated initialTasks array
  */
 
@@ -18,6 +18,11 @@ export async function fetchInitialData() {
     try {
         const response = await fetch(API_URL);
         initialTasks = await response.json();
+
+        // Save API data (array) to localStorage 
+        localStorage.setItem("tasks", JSON.stringify(initialTasks));
+        console.log(initialTasks);
+
         return initialTasks;
     } catch (error) {
         console.error("API Error:", error);

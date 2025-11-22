@@ -9,6 +9,7 @@ export function addNewTask() {
     const selectStatus = document.getElementById('addtask-status');
     
     const storedTasks = getTasksFromStorage();
+    console.log(storedTasks);
     //Find maximum existing id in initial tasks array then increment id when new task added. If 0 tasks then give task id = 1
     let nextId;
     if (storedTasks.length > 0) {

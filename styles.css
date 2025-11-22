@@ -26,6 +26,10 @@ body {
   background: var(--background-offwhite-color);
 }
 
+#loadingElement {
+  position: fixed;
+}
+
 .nav-all-boards,
 .todo-title,
 .doing-title,
