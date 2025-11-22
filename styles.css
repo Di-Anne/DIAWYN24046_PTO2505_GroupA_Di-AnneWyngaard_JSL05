@@ -51,6 +51,10 @@ body {
   margin: 30px 113px 54px 34px; /* Space around kanban logo */
 }
 
+.nav-logo {
+  width: 100%;
+}
+
 .nav-boards-div {
   display: flex;
   flex-direction: column;
