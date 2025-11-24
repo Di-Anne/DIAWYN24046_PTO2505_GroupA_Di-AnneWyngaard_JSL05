@@ -2,6 +2,9 @@ import { getTasksFromStorage,  saveTasksToStorage } from "../utils/localStorage.
 import { removeExistingTaskDivs, renderTasks } from "../ui/render.js";
 import { resetForm } from "./form.js";
 
+/**
+ * Add a new task
+ */
 export function addNewTask() {
     const modalNew = document.getElementById('addtask-modal')
     const inputTitle = document.getElementById('addtask-title');
@@ -10,6 +13,7 @@ export function addNewTask() {
     
     const storedTasks = getTasksFromStorage();
     console.log(storedTasks);
+
     //Find maximum existing id in initial tasks array then increment id when new task added. If 0 tasks then give task id = 1
     let nextId;
     if (storedTasks.length > 0) {
@@ -38,4 +42,17 @@ export function addNewTask() {
     renderTasks(updatedTasks);
     resetForm();
     modalNew.close();
+}
+
+/**
+ * Deletes tasks by its ID
+ * @param {number} taskId - ID of task to delete
+ */
+export function deleteTask(taskId) {
+    const tasks = getTasksFromStorage();
+    // If ID of task I want to delete is not equal, dont add into new array
+    const updatedTasks = tasks.filter((task) => task.id !== taskId);
+    saveTasksToStorage(updatedTasks);
+    removeExistingTaskDivs();
+    renderTasks(updatedTasks);
 }
