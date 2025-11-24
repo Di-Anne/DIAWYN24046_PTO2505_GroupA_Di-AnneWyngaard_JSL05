@@ -32,14 +32,14 @@ export function addNewTask() {
     };   
 
     //Add new task inputs to initial array (all tasks) already in memory= forming new array
-    const updatedTasks = [...storedTasks, newTask]; 
+    const updateNewTasks = [...storedTasks, newTask]; 
 
     // Save the updated tasks array to localStorage
-    saveTasksToStorage(updatedTasks);
+    saveTasksToStorage(updateNewTasks);
 
     // Remove all existing task divs before rendering to prevent duplicates/ overflow
     removeExistingTaskDivs();
-    renderTasks(updatedTasks);
+    renderTasks(updateNewTasks);
     resetForm();
     modalNew.close();
 }

@@ -11,7 +11,15 @@ export function openTaskModal(task) {
     // Delete task when delete button is clicked
     document.getElementById('delete-btn').addEventListener('click', (event) => {
         event.stopPropagation(); 
-        deleteTask(task.id);
+        // Ask for confirmation
+        const confirmed = confirm('Are you sure you want to delete this task?');
+        if(!confirmed) {
+            return; // If user clicks "Cancel", do nothing
+        } else if (confirmed) {
+            // If user confirms, delete task
+            deleteTask(task.id);
+        }
+        modal.close();
     });
     modal.showModal();
 }
