@@ -1,5 +1,6 @@
 import { openTaskModal } from "./modalHandlers.js";
 
+
 /**
  * Creates a single task div element in DOM
  * @param {Object} task - task object
@@ -9,9 +10,13 @@ export function createTaskElement(task) {
     const taskDiv = document.createElement('div');
     taskDiv.className = "task-div";
     taskDiv.textContent = task.title;
+    taskDiv.dataset.taskId = task.id;
 
     taskDiv.addEventListener('click', () => {
         openTaskModal(task);
     });
     return taskDiv;
 }
+
+
+

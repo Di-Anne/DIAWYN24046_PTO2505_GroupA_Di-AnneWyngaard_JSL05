@@ -1,10 +1,18 @@
 import { addNewTask } from "../tasks/newTaskManager.js";
+import { deleteTask } from "../tasks/newTaskManager.js";
 
 export function openTaskModal(task) {
     const modal = document.getElementById('task-modal');
     document.getElementById('task-title').value = task.title;
     document.getElementById('task-descrip').value = task.description;
     document.getElementById('task-status').value = task.status;
+    document.getElementById('delete-btn');
+
+    // Delete task when delete button is clicked
+    document.getElementById('delete-btn').addEventListener('click', (event) => {
+        event.stopPropagation(); 
+        deleteTask(task.id);
+    });
     modal.showModal();
 }
 
