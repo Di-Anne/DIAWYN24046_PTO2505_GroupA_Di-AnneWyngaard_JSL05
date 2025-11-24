@@ -12,6 +12,7 @@
   --todo-dot-color: #49c4e5;
   --doing-dot-color: #8471f2;
   --done-dot-color: #67e2ae;
+  --delete-btn-red: rgb(234, 85, 85);
 }
 
 body {
@@ -372,6 +373,31 @@ textarea {
   resize: vertical;
 }
 
+/* Save and delete buttons on each task modal */
+.btn-div {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.save-btn, .delete-btn {
+  margin-top: 30px;
+  background-color: var(--main-theme-color);
+  color: var(--background-white-color);
+  border: none;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 0.8em;
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: var(--delete-btn-red);
+}
+
+
 /* =========== Responsive styles =========== */
 @media (max-width: 1023px) {
   .side-nav-bar {
@@ -444,5 +470,14 @@ textarea {
 
   .todo, .doing, .done {
     padding-bottom: 0; /*Removes double spacing between todo and doing, doing and done columns*/
+  }
+
+  .btn-div {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .delete-btn {
+    margin-top: 0;
   }
 }
