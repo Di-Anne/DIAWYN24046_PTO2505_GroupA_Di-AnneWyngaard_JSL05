@@ -6,23 +6,24 @@ export function openTaskModal(task) {
     document.getElementById('task-title').value = task.title;
     document.getElementById('task-descrip').value = task.description;
     document.getElementById('task-status').value = task.status;
-    document.getElementById('delete-btn');
+    const deleteBtn = document.getElementById('delete-btn');
 
-    // Delete task when delete button is clicked
-    document.getElementById('delete-btn').addEventListener('click', (event) => {
-        event.stopPropagation(); 
-        // Ask for confirmation
+    // Confirm deletion of tasks
+    function handleDelete(event) {
+        event.stopPropagation();
         const confirmed = confirm('Are you sure you want to delete this task?');
-        if(!confirmed) {
-            return; // If user clicks "Cancel", do nothing
-        } else if (confirmed) {
-            // If user confirms, delete task
+        if (confirmed) {
             deleteTask(task.id);
+            modal.close();
         }
-        modal.close();
-    });
+    }
+
+    // Prevent duplicate listeners that might form everytime openTaskModal() runs
+    deleteBtn.removeEventListener('click', handleDelete);
+    deleteBtn.addEventListener('click', handleDelete);
+  
     modal.showModal();
-}
+};
 
 export function closeTaskModal() {
     const modal = document.getElementById('task-modal');

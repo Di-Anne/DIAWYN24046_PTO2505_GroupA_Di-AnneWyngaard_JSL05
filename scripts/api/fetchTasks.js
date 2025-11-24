@@ -45,5 +45,7 @@ export async function fetchInitialData() {
     }
 }
 
-//Empty array for holding all of the tasks in localStorage
-export const allTasks = [];
+fetchInitialData();
+
+// Empty array for holding all of the tasks in local storage
+export const allTasks = []

@@ -12,7 +12,6 @@ export function addNewTask() {
     const selectStatus = document.getElementById('addtask-status');
     
     const storedTasks = getTasksFromStorage();
-    console.log(storedTasks);
 
     //Find maximum existing id in initial tasks array then increment id when new task added. If 0 tasks then give task id = 1
     let nextId;
@@ -32,14 +31,15 @@ export function addNewTask() {
     };   
 
     //Add new task inputs to initial array (all tasks) already in memory= forming new array
-    const updateNewTasks = [...storedTasks, newTask]; 
+    const updateTasks = [...storedTasks, newTask]; 
 
     // Save the updated tasks array to localStorage
-    saveTasksToStorage(updateNewTasks);
+    saveTasksToStorage(updateTasks);
+    console.log('Saving tasks:', updateTasks);
 
     // Remove all existing task divs before rendering to prevent duplicates/ overflow
     removeExistingTaskDivs();
-    renderTasks(updateNewTasks);
+    renderTasks(updateTasks);
     resetForm();
     modalNew.close();
 }

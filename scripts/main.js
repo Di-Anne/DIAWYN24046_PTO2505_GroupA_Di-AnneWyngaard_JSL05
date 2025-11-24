@@ -7,6 +7,7 @@ import { getTasksFromStorage } from "./utils/localStorage.js";
  */
 function initializeTaskBoard() {
     const storedTasks = getTasksFromStorage();
+    console.log('Loaded from storage:', storedTasks);
     removeExistingTaskDivs();
     renderTasks(storedTasks);
     closeTaskModal();
