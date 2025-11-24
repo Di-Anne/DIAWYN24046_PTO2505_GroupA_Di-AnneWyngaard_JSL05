@@ -124,7 +124,23 @@ body {
   top: 50%;
   left: 50%; 
   font-size: 1.2rem;
+  font-weight: bold;
   z-index: 1000;
+}
+
+.loader::after {
+  content: "";
+  display: block;
+  margin: 5px auto;
+  width: 24px;
+  height: 24px;
+  border: 4px solid #ccc;
+  border-top-color: #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+ @keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 .main-tasks-container {
