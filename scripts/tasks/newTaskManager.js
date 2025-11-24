@@ -28,7 +28,7 @@ export function addNewTask() {
     };   
 
     //Add new task inputs to initial array (all tasks) already in memory= forming new array
-    const updatedTasks = [...storedTasks, newTask]; //WHY? Why not modify original array and push new task to original array instead?
+    const updatedTasks = [...storedTasks, newTask]; 
 
     // Save the updated tasks array to localStorage
     saveTasksToStorage(updatedTasks);
