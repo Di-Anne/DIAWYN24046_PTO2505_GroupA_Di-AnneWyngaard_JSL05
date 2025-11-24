@@ -1,3 +1,13 @@
+const loader = document.getElementById('loader');
+
+function showLoader() {
+    loader.style.display = 'block'; 
+}
+
+function hideLoader() {
+    loader.style.display = 'none'; 
+}
+
 const API_URL = "https://jsl-kanban-api.vercel.app/";
 
 // Empty initial tasks array 
@@ -16,6 +26,7 @@ export async function fetchInitialData() {
 
     // Fetching data from API and populating array 
     try {
+        showLoader();
         const response = await fetch(API_URL);
         initialTasks = await response.json();
 
@@ -26,6 +37,8 @@ export async function fetchInitialData() {
         return initialTasks;
     } catch (error) {
         console.error("API Error:", error);
+    } finally {
+        hideLoader();
     }
 }
 
