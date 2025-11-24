@@ -7,7 +7,6 @@ import { fetchInitialData } from "../api/fetchTasks.js";
  * Saves task array to localStorage
  * @param {Array<Object>} tasks - The array of tasks
  */
-
 export function saveTasksToStorage(tasks) {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }

@@ -1,3 +1,6 @@
+/**
+ * Show loading message while tasks are being fetched from API
+ */
 const loader = document.getElementById('loader');
 
 function showLoader() {
@@ -17,7 +20,6 @@ let initialTasks;
  * Fetches initial task data from a given API and populate empty initialTasks array, saves array to localStorage
  * @returns - populated initialTasks array
  */
-
 export async function fetchInitialData() {
     // Runs if data has already been fetched
     if (initialTasks) {
@@ -26,6 +28,7 @@ export async function fetchInitialData() {
 
     // Fetching data from API and populating array 
     try {
+        // Show loader while tasks are being fetched
         showLoader();
         const response = await fetch(API_URL);
         initialTasks = await response.json();
