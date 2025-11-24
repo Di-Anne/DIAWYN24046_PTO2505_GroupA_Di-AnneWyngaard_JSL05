@@ -56,3 +56,5 @@ export function deleteTask(taskId) {
     removeExistingTaskDivs();
     renderTasks(updatedTasks);
 }
+
+

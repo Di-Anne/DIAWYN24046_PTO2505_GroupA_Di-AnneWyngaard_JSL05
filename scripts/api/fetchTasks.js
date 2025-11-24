@@ -36,6 +36,7 @@ export async function fetchInitialData() {
         // Save API data (array) to localStorage 
         localStorage.setItem("tasks", JSON.stringify(initialTasks));
         console.log(initialTasks);
+        allTasks.push(initialTasks);
 
         return initialTasks;
     } catch (error) {
@@ -45,7 +46,5 @@ export async function fetchInitialData() {
     }
 }
 
-fetchInitialData();
-
-// Empty array for holding all of the tasks in local storage
-export const allTasks = []
+// Empty array for holding API tasks in local storage
+export const apiTasks = []

@@ -17,7 +17,6 @@ export function openTaskModal(task) {
             modal.close();
         }
     }
-
     // Prevent duplicate listeners that might form everytime openTaskModal() runs
     deleteBtn.removeEventListener('click', handleDelete);
     deleteBtn.addEventListener('click', handleDelete);
