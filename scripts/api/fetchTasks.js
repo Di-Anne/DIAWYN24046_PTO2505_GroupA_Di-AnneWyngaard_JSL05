@@ -14,7 +14,7 @@ function hideLoader() {
 const API_URL = "https://jsl-kanban-api.vercel.app/";
 
 // Empty initial tasks array 
-let initialTasks;
+export let initialTasks;
 
 /**
  * Fetches initial task data from a given API and populate empty initialTasks array, saves array to localStorage
@@ -36,7 +36,6 @@ export async function fetchInitialData() {
         // Save API data (array) to localStorage 
         localStorage.setItem("tasks", JSON.stringify(initialTasks));
         console.log(initialTasks);
-        allTasks.push(initialTasks);
 
         return initialTasks;
     } catch (error) {
@@ -45,6 +44,9 @@ export async function fetchInitialData() {
         hideLoader();
     }
 }
+
+// Show loader
+fetchInitialData();
 
 // Empty array for holding API tasks in local storage
 export const apiTasks = []

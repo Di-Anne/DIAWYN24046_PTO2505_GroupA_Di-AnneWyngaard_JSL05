@@ -1,7 +1,4 @@
-import { apiTasks } from "../api/fetchTasks.js";
 
-// Store initial tasks from API in variable 
-  let initialTasks = apiTasks;
 
 /**
  * Saves task array to localStorage
