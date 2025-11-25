@@ -12,7 +12,6 @@ function initializeTaskBoard() {
     renderTasks(storedTasks);
     closeTaskModal();
     newTaskModalHandler();
-    
 }
 
 // Initialize taskBoard after DOM has fully loaded

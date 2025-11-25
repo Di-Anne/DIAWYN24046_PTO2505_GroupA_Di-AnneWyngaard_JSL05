@@ -45,7 +45,6 @@ export async function fetchInitialData() {
     }
 }
 
-// Show loader
 fetchInitialData();
 
 // Empty array for holding API tasks in local storage
