@@ -5,9 +5,11 @@ import { getTasksFromStorage } from "./utils/localStorage.js";
 /**
  * Initializes task-board 
  */
-function initializeTaskBoard() {
-    const storedTasks = getTasksFromStorage();
+async function initializeTaskBoard() {
+    // This ensures loader completes before rendering
+    const storedTasks = await getTasksFromStorage();
     console.log('Loaded from storage:', storedTasks);
+
     removeExistingTaskDivs();
     renderTasks(storedTasks);
     closeTaskModal();
@@ -15,7 +17,7 @@ function initializeTaskBoard() {
 }
 
 // Initialize taskBoard after DOM has fully loaded
-window.addEventListener("load", initializeTaskBoard);
+window.addEventListener("load", initializeTaskBoard());
 
 
 

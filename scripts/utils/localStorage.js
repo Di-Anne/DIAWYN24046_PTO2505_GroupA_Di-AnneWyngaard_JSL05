@@ -1,4 +1,4 @@
-
+import { fetchInitialData } from "../api/fetchTasks.js";
 
 /**
  * Saves task array to localStorage
@@ -8,12 +8,22 @@ export function saveTasksToStorage(tasks) {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 /**
  * Gets tasks from LocalStorage 
  * @returns {Array<Object>} the array of tasks
  */
-export function getTasksFromStorage() {
-  const storedTasks = localStorage.getItem("tasks");
+export async function getTasksFromStorage() {
+  // Ensure tasks are fetched (and saved) before reading
+  await fetchInitialData();
+
+  // Artificial delay so UI has time to update/ loader to show
+  await delay(10);
+
+  let storedTasks = localStorage.getItem("tasks");
   if (storedTasks) {
     try {
       return JSON.parse(storedTasks);
@@ -21,9 +31,5 @@ export function getTasksFromStorage() {
       console.error("Error parsing JSON:", error)
     }
   }
-
-  // No tasks in storage then initialize storage with default data from API: initialTasks
-  localStorage.setItem("tasks", JSON.stringify(initialTasks));
-  return initialTasks;
 }
 
