@@ -7,14 +7,14 @@ export function openTaskModal(task) {
     document.getElementById('task-descrip').value = task.description;
     document.getElementById('task-status').value = task.status;
    
-     // Delete task when delete button is clicked
+     // Delete button on task modal opens up delete confirmation modal
     document.getElementById('delete-btn').addEventListener('click', (event) => {
         event.stopPropagation(); 
-        
         const deleteConfirmationModal = document.getElementById('deletion-message');
         deleteConfirmationModal.showModal();
     });
 
+    // Confirm button to officially delete task 
     document.getElementById('btn-delete-confirm').addEventListener('click', () => {
         deleteTask(task.id);
         deleteConfirmationModal.close();
