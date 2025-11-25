@@ -17,6 +17,7 @@ export function openTaskModal(task) {
     // Confirm button to officially delete task 
     document.getElementById('btn-delete-confirm').addEventListener('click', () => {
         deleteTask(task.id);
+        const deleteConfirmationModal = document.getElementById('deletion-message');
         deleteConfirmationModal.close();
     });
 

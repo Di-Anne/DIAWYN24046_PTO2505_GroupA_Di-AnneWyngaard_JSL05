@@ -1,4 +1,4 @@
-import { getTasksFromStorage,  saveTasksToStorage } from "../utils/localStorage.js";
+import { getTasksSync,  saveTasksToStorage } from "../utils/localStorage.js";
 import { removeExistingTaskDivs, renderTasks } from "../ui/render.js";
 import { resetForm } from "./form.js";
 
@@ -11,9 +11,10 @@ export function addNewTask() {
     const inputDescrip = document.getElementById('addtask-descrip');
     const selectStatus = document.getElementById('addtask-status');
     
-    const storedTasks = getTasksFromStorage();
+    // Get current tasks (array)
+    const storedTasks = getTasksSync();
 
-    //Find maximum existing id in initial tasks array then increment id when new task added. If 0 tasks then give task id = 1
+    //Find maximum existing ID in tasks array then increment ID when new task added. If 0 tasks then give task id = 1
     let nextId;
     if (storedTasks.length > 0) {
         const ids = storedTasks.map((t) => t.id);
@@ -42,6 +43,7 @@ export function addNewTask() {
     renderTasks(updateTasks);
     resetForm();
     modalNew.close();
+    return updateTasks; 
 }
 
 /**
@@ -49,7 +51,7 @@ export function addNewTask() {
  * @param {number} taskId - ID of task to delete
  */
 export function deleteTask(taskId) {
-    const tasks = getTasksFromStorage();
+    const tasks = getTasksSync();
     // If ID of task I want to delete is not equal, dont add into new array
     const updatedTasks = tasks.filter((task) => task.id !== taskId);
     saveTasksToStorage(updatedTasks);
