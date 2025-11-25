@@ -1,5 +1,20 @@
 import { fetchInitialData } from "../api/fetchTasks.js";
 
+/**
+ * Show loading message while tasks are being fetched from API
+ */
+const loader = document.getElementById('loader');
+function showLoader() {
+    loader.style.display = 'block'; 
+}
+function hideLoader() {
+    loader.style.display = 'none'; 
+}
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 // Synchronous version - read tasks from local Storage immediately
 export function getTasksSync() {
   const raw = localStorage.getItem("tasks");
@@ -22,22 +37,6 @@ export function getTasksSync() {
 export function saveTasksToStorage(tasks) {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
-
-/**
- * Show loading message while tasks are being fetched from API
- */
-const loader = document.getElementById('loader');
-function showLoader() {
-    loader.style.display = 'block'; 
-}
-function hideLoader() {
-    loader.style.display = 'none'; 
-}
-
-function delay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 
 /**
  * Async-init version. Should be called on App start

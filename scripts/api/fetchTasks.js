@@ -1,5 +1,3 @@
-
-
 const API_URL = "https://jsl-kanban-api.vercel.app/";
 
 // Empty initial tasks array 
