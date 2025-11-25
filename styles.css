@@ -475,6 +475,12 @@ textarea {
    .done {
     padding-top: 0; /*Removes double spacing between todo and done columns*/
   }
+
+  .loader {
+    top: 50%;
+    left: 45%; 
+    
+  }
 }
 
 @media (max-width: 580px) {
@@ -520,5 +526,11 @@ textarea {
 
   .delete-btn {
     margin-top: 0;
+  }
+
+  .loader {
+    top: 50%;
+    left: 40%; 
+    
   }
 }
