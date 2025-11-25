@@ -1,35 +1,34 @@
-import { addNewTask } from "../tasks/newTaskManager.js";
+import { addNewTask, deleteTask } from "../tasks/newTaskManager.js";
 
 export function openTaskModal(task) {
     const modal = document.getElementById('task-modal');
     document.getElementById('task-title').value = task.title;
     document.getElementById('task-descrip').value = task.description;
     document.getElementById('task-status').value = task.status;
-  
+
+    document.getElementById('delete-btn').addEventListener('click', () => {
+        const deleteModal = document.getElementById('deletion-message');
+         // Show modal delete confirmation when delete button is clicked
+        deleteModal.showModal();
+   });
+
     modal.showModal();
-    deleteConfirmationModal();
 };
 
-function deleteConfirmationModal() {
-    const deleteModal = document.getElementById('deletion-message');
-    const deleteModalForm = document.getElementById('delete-message-form');
-    const deleteBtn = document.getElementById('delete-btn');
+function deleteConfirmationModal(task) {
+    const deleteConfirmBtn = document.getElementById('btn-delete-confirm');
     const deleteCancelBtn = document.getElementById('btn-delete-cancel');
 
-    deleteBtn.addEventListener('click', () => {
-        deleteModal.showModal();
+     deleteConfirmBtn.addEventListener('click', () => {
+        deleteTask(task.id);
     });
 
     deleteCancelBtn.addEventListener('click', () => {
         deleteModal.close()
     });
-
-    deleteModalForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        // If inputs are valid proceed to add new task
-        deleteTask(task.id);
-    });
 }
+
+deleteConfirmationModal();
 
 export function closeTaskModal() {
     const modal = document.getElementById('task-modal');
