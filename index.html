@@ -15,12 +15,24 @@
   <body>
     <!-- Navigation Sidebar: Contains the logo, navigation links for boards, and theme toggle. -->
     <nav class="side-nav-bar">
-      <div class="nav-logo-div">
-        <img class="nav-logo" src="./assets/logo-light.svg"/>
+      <div>
+        <div class="nav-logo-div">
+          <img class="nav-logo" src="./assets/logo-light.svg"/>
+        </div>
+        <div class="nav-boards-div">
+          <p class="nav-all-boards">All boards (1)</p>
+          <button class="nav-toggle">Launch Career</button>
+        </div>
       </div>
-      <div class="nav-boards-div">
-        <p class="nav-all-boards">All boards (1)</p>
-        <button class="nav-toggle">Launch Career</button>
+      <div class="nav-features-div" id="nav-features-div">
+        <div class="nav-theme-toggle-div">
+          <label class="toggle-switch">
+            <input type="checkbox"/>
+            <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="nav-hide" id="nav-hide">🚫 Hide Sidebar</div>
       </div>
     </nav>
 
