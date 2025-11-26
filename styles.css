@@ -11,6 +11,7 @@
   --background-offwhite-color: rgb(244, 247, 253);
   --todo-dot-color: #49c4e5;
   --doing-dot-color: #8471f2;
+  --light-purple-color:  rgb(168, 164, 255);
   --done-dot-color: #67e2ae;
   --delete-btn-red: rgb(234, 85, 85);
 }
@@ -87,13 +88,14 @@ body {
   cursor: pointer;
 }
 
-/* Nav-bar interaction */
+/*** Nav-bar interaction ***/
 .nav-features-div {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
+/* Theme-toggle */
 .nav-theme-toggle-div {
   background: var(--background-offwhite-color);
   width: 250px;
@@ -108,7 +110,7 @@ body {
 
 .nav-theme-toggle {
   -webkit-appearance: none; /* hide the default checkbox */
-  position: relative; /* for circle inside toggle to be position absolute */
+  position: relative; /* for circle inside toggle to be positioned relative to toggle*/
   width: 40px;
   height: 20px;
   border-radius: 25px;
@@ -117,7 +119,6 @@ body {
   cursor: pointer;
 }
 
-/* Cicle within theme-toggle */
 .nav-theme-toggle::after {
   content: "";
   background-color: var(--background-white-color);
@@ -132,17 +133,29 @@ body {
 }
 
 .nav-theme-toggle:checked {
-  background-color: rgb(168, 164, 255);
+  background-color: var(--light-purple-color);
 }
 
 .nav-theme-toggle:checked::after {
   left: 70%;
 }
 
+/* Show Sidebar */
+.nav-eyes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-purple-color);
+  width: 56px;
+  height: 48px;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  padding-right: 10px;
+}
 
+/* Hide Sidebar */
 .nav-hide {
   font-family: inherit;
-  border: none;
   color: var(--main-theme-color);
   display: flex;
   align-items: center; 

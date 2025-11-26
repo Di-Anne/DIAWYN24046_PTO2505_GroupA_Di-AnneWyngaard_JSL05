@@ -14,7 +14,7 @@
   </head>
   <body>
     <!-- Navigation Sidebar: Contains the logo, navigation links for boards, and theme toggle. -->
-    <nav class="side-nav-bar">
+    <nav class="side-nav-bar" id="side-nav-bar">
       <div>
         <div class="nav-logo-div">
           <img class="nav-logo" src="./assets/logo-light.svg"/>
@@ -28,12 +28,14 @@
         <div class="nav-theme-toggle-div">
           <div class="sun">☀️</div>
           <div>
-            <input class="nav-theme-toggle" type="checkbox">
+            <input class="nav-theme-toggle" id="nav-theme-toggle" type="checkbox">
           </div>
           <div class="moon">🌑</div>
         </div>
-        
-        <div class="nav-hide" id="nav-hide">🚫 Hide Sidebar</div>
+        <div class="nav-eyes" id="nav-eyes">👀</div>
+        <div class="nav-hide" id="nav-hide">
+          🚫 Hide Sidebar
+        </div>
       </div>
     </nav>
 
