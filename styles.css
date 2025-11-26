@@ -93,6 +93,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  position: relative;
 }
 
 /* Theme-toggle */
@@ -142,15 +143,16 @@ body {
 
 /* Show Sidebar */
 .nav-eyes {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: var(--light-purple-color);
   width: 56px;
   height: 48px;
   border-top-right-radius: 100px;
   border-bottom-right-radius: 100px;
-  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 15px;
+  display: none;/* Hide when sidebar shows */
+  position: fixed;
+  top: 800px;
 }
 
 /* Hide Sidebar */
