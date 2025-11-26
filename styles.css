@@ -87,71 +87,44 @@ body {
   cursor: pointer;
 }
 
+/* Nav-bar interaction */
+.nav-features-div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nav-theme-toggle-div {
+  background: var(--background-offwhite-color);
+  width: 250px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-right: 20px;
+  margin-left: 20px;
+  border-radius: 6px;
+}
+
 .nav-hide {
   font-family: inherit;
-  font-weight: bold;
   border: none;
-  font-size: 15px;
   color: var(--main-theme-color);
   display: flex;
-  align-items: center; /*align launch title and toggle*/
-  padding: 28px 12px 28px 40px; /*Space around launch title to align with All-boards title*/
+  align-items: center; 
+  justify-content: center; 
   width: 276px;
   height: 48px;
   background: var(--background-offwhite-color);
   border-top-right-radius: 100px;
   border-bottom-right-radius: 100px;
+  margin-bottom: 15px;
   cursor: pointer;
 }
 
 
 
-.nav-theme-toggle-div {
-  background: var(--background-offwhite-color);
-  width: 276px;
-  padding: 28px 12px 28px 40px;
-  display: flex;
-}
 
-.toggle-switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 24px;
-}
-
-/* hide the default checkbox */
-.toggle-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* the track / background of slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  background-color: var(--main-theme-color);
-  border-radius: 24px;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transition: background-color 0.3s;
- 
-}
-
-.slider::before {
-  content: "";
-  position: absolute;
-  height: 20px;
-  width: 20px;
-  left: 4px;
-  bottom: 2px;
-  background-color: white;
-  border-radius: 50%;
-  transition: transform 0.3s;
-}
 
 
 
