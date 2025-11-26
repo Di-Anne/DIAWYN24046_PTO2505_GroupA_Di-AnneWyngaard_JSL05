@@ -47,6 +47,25 @@ export function addNewTask() {
 }
 
 /**
+ * Edits task by ID
+ * @param {number} taskId - ID of task to edit
+ * @param {*} updatedData 
+ */
+export function editTask(taskId, updatedData) {
+    const tasks = getTasksSync();
+    const updatedTasks = tasks.map((task) => {
+        if (task.id === taskId) {
+            return {...task, ...updatedData };
+        } else {
+            return task;
+        }
+    });
+    saveTasksToStorage(updatedTasks);
+    removeExistingTaskDivs();
+    renderTasks(updatedTasks);
+}
+
+/**
  * Deletes tasks by its ID
  * @param {number} taskId - ID of task to delete
  */

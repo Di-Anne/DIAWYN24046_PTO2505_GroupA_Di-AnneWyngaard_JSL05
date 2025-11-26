@@ -1,8 +1,11 @@
-import { addNewTask, deleteTask } from "../tasks/newTaskManager.js";
+import { addNewTask, deleteTask, editTask } from "../tasks/newTaskManager.js";
+
+let currentEditingTaskId = null; // Track task being edited
 
 
 export function openTaskModal(task) {
     const modal = document.getElementById('task-modal');
+    currentEditingTaskId = task.id;   // set ID here
     document.getElementById('task-title').value = task.title;
     document.getElementById('task-descrip').value = task.description;
     document.getElementById('task-status').value = task.status;
@@ -41,6 +44,7 @@ export function newTaskModalHandler() {
     
     newTaskBtn.addEventListener('click', () => {
         newModal.showModal();
+        currentEditingTaskId = null; // Adding a new task
     });
 
     newTaskCloseBtn.addEventListener('click', () => {
@@ -49,16 +53,35 @@ export function newTaskModalHandler() {
 
     newTaskForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        // If inputs are valid proceed to add new task
-        if (newTaskForm.checkValidity()) {
-            addNewTask();
-        } else {
+        // Check validity of form
+        if (!newTaskForm.checkValidity()) {
             newTaskForm.reportValidity();
+            return;
+        } 
+        const title = document.getElementById("task-title").value.trim();
+        const description = document.getElementById("task-descrip").value.trim();
+        const status = document.getElementById("task-status").value.trim();
+
+        if(currentEditingTaskId) {
+            // Editing existing task
+            editTask(currentEditingTaskId, {title, description, status});
+        } else {
+            //Add new task
+            addNewTask();
         }
     });
 }
 
-
-
-
+export function editTaskHandler() {
+    const saveChangesBtn = document.getElementById('save-btn');
+    
+    saveChangesBtn.addEventListener('click', () => {
+        const title = document.getElementById("task-title").value.trim();
+        const description = document.getElementById("task-descrip").value.trim();
+        const status = document.getElementById("task-status").value.trim();
+        if (currentEditingTaskId != null) {
+            editTask(currentEditingTaskId, {title, description, status});
+        } 
+    });
+}
 
