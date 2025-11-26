@@ -13,7 +13,7 @@ export async function fetchInitialData() {
         return initialTasks;
     }
 
-    // Fetching data from API and populating array 
+    // Fetching data from API  
     try {
         const response = await fetch(API_URL);
         initialTasks = await response.json();

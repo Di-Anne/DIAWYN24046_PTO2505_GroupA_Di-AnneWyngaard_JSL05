@@ -15,7 +15,11 @@ function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// Synchronous version - read tasks from local Storage immediately
+
+/**
+ * Synchronous version - read tasks from local Storage immediately
+ * @returns - Array of stored tasks
+ */
 export function getTasksSync() {
   const raw = localStorage.getItem("tasks");
   if (!raw) {
@@ -23,7 +27,11 @@ export function getTasksSync() {
   }
   try {
     const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
+    if(Array.isArray(parsed)) {
+      return parsed;
+    } else {
+      return [];
+    }
   } catch (error) {
     console.error("Could not parse tasks from localStorage", error);
     return [];
@@ -46,25 +54,19 @@ export function saveTasksToStorage(tasks) {
  */
 export async function initTasks() {
   const stored = localStorage.getItem("tasks");
-
   showLoader();   // show your loader UI
-
   await delay(250);  // give browser a moment to paint the loader
 
   if (!stored) {
     try {
-      const apiTasks = await fetchInitialData();
-      localStorage.setItem("tasks", JSON.stringify(apiTasks));
+      await fetchInitialData();
     } catch (err) {
       console.warn("API fetch failed — will use empty list or stored data", err);
     }
   }
 
   const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
-
   hideLoader();  // hide loader when done
-
   return tasks;
-  
 }
  
