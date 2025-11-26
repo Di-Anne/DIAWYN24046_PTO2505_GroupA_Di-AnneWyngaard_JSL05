@@ -106,6 +106,40 @@ body {
   border-radius: 6px;
 }
 
+.nav-theme-toggle {
+  -webkit-appearance: none; /* hide the default checkbox */
+  position: relative; /* for circle inside toggle to be position absolute */
+  width: 40px;
+  height: 20px;
+  border-radius: 25px;
+  margin-top: 8px;
+  background-color: var(--main-theme-color);
+  cursor: pointer;
+}
+
+/* Cicle within theme-toggle */
+.nav-theme-toggle::after {
+  content: "";
+  background-color: var(--background-white-color);
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  height: 14px;
+  width: 14px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: left .3s;
+}
+
+.nav-theme-toggle:checked {
+  background-color: rgb(168, 164, 255);
+}
+
+.nav-theme-toggle:checked::after {
+  left: 70%;
+}
+
+
 .nav-hide {
   font-family: inherit;
   border: none;
