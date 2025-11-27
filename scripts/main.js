@@ -1,7 +1,7 @@
 import { removeExistingTaskDivs, renderTasks } from "./ui/render.js";
 import { closeTaskModal, newTaskModalHandler, editTaskHandler } from "./ui/modalHandlers.js";
 import { initTasks } from "./utils/localStorage.js";
-import { hideSidebar } from "./utils/sidebar.js";
+import { hideSidebar, showSidebar } from "./utils/sidebar.js";
 
 /**
  * Initializes task-board 
@@ -20,6 +20,7 @@ async function initializeTaskBoard() {
     editTaskHandler();
 
     hideSidebar();
+    showSidebar();
 }
 
 // Initialize taskBoard after DOM has fully loaded
