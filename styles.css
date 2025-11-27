@@ -597,7 +597,6 @@ textarea {
 }
 
 
-
 /* =========== Responsive styles =========== */
 @media (max-width: 1023px) {
   .side-nav-bar {
@@ -605,11 +604,11 @@ textarea {
   }
 
   .nav-eyes {
-    display: none !important;
+    display: block;
   }
 
   .favicon-mobile {
-    display: block;
+    display: none;
   }
 
   .main-tasks-container {
@@ -649,6 +648,10 @@ textarea {
 @media (max-width: 580px) {
   .favicon-mobile {
     display: block;
+  }
+
+  .nav-eyes {
+    display: none;
   }
 
   .launch-title {
