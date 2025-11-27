@@ -43,7 +43,7 @@
     <div class="main-layout-container">
       <header class="launch-header">
         <div class="launch-header-div">
-          <img class="favicon-mobile" src="./assets/favicon.svg"/> 
+          <img class="favicon-mobile" id="favicon-mobile" src="./assets/favicon.svg"/> 
           <h2 class="launch-title">Launch Career</h2>
         </div>
         <div>
@@ -146,5 +146,21 @@
           </div>
         </form>
       </dialog>
+
+       <!-- Modal for Mobile Sidebar Menu -->
+      <div class="nav-bar-mobile-menu"id="nav-bar-mobile-menu">
+        <div class="nav-boards-div">
+          <p class="nav-all-boards">All boards (1)</p>
+          <button class="close-btn" id="cancel-mobilemenu-btn">&times;</button>
+          <button class="nav-toggle">Launch Career</button>
+        </div>
+        <div class="nav-theme-toggle-div">
+          <div class="sun">☀️</div>
+          <div>
+            <input class="nav-theme-toggle" id="nav-theme-toggle" type="checkbox">
+          </div>
+          <div class="moon">🌑</div>
+        </div>
+      </div>
   </body>
 </html>

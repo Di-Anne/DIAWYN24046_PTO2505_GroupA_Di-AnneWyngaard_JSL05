@@ -13,6 +13,9 @@ export function hideSidebar() {
     });
 }
 
+/**
+ * Show sidebar when eyes-icon is clicked
+ */
 export function showSidebar() {
     const sidebar = document.getElementById('side-nav-bar');
     const showSidebarBtn = document.getElementById('nav-eyes');

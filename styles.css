@@ -525,6 +525,18 @@ textarea {
   background-color: var(--delete-btn-red);
 }
 
+/* Mobile nav-bar menu */
+.nav-bar-mobile-menu {
+  top: 10%;
+  left: 5%;
+  border-radius: 8px;
+  width: 90%;
+  padding: 24px;
+  background-color: var(--background-white-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  position: fixed;
+}
+
 
 /* =========== Responsive styles =========== */
 @media (max-width: 1023px) {
@@ -537,7 +549,7 @@ textarea {
   }
 
   .favicon-mobile {
-    display: revert;
+    display: block;
   }
 
   .main-tasks-container {
@@ -576,7 +588,7 @@ textarea {
 
 @media (max-width: 580px) {
   .favicon-mobile {
-    display: revert;
+    display: block;
   }
 
   .launch-title {
