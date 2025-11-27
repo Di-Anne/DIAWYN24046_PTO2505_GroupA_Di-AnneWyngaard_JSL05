@@ -13,7 +13,7 @@
     <script type="module" src="scripts/main.js" defer></script>
   </head>
   <body>
-    <div class="mobile-modal-overlay"></div>
+    <div class="mobile-modal-overlay" id="mobile-modal-overlay"></div>
     <!-- Navigation Sidebar: Contains the logo, navigation links for boards, and theme toggle. -->
     <nav class="side-nav-bar" id="side-nav-bar">
       <div>
@@ -41,8 +41,8 @@
     <div class="nav-eyes" id="nav-eyes">👀</div>
 
     <!-- Main Layout: Header with board title, add task button, and main content area for task columns. -->
-    <div class="main-layout-container">
-      <header class="launch-header">
+    <div class="main-layout-container" id="main-layout-container">
+      <header class="launch-header" id="launch-header">
         <div class="launch-header-div">
           <img class="favicon-mobile" id="favicon-mobile" src="./assets/favicon.svg"/> 
           <h2 class="launch-title">Launch Career</h2>
