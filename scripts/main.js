@@ -21,6 +21,7 @@ async function initializeTaskBoard() {
 
     hideSidebar();
     showSidebar();
+    
 }
 
 // Initialize taskBoard after DOM has fully loaded
