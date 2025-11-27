@@ -72,7 +72,7 @@ body {
   padding: 0 12px 0 40px; /*Space around all boards title*/
 }
 
-.nav-toggle {
+.nav-toggle, .mobile-nav-toggle {
   font-family: inherit;
   font-weight: bold;
   border: none;
@@ -531,11 +531,44 @@ textarea {
   left: 5%;
   border-radius: 8px;
   width: 90%;
+  height: 210px;
   padding: 24px;
+  padding-left: 0;
   background-color: var(--background-white-color);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   position: fixed;
+  display: flex;
+  flex-direction: column;
 }
+
+.mobile-all-boards-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mobile-nav-toggle {
+  width: 95%;
+}
+
+.mobile-nav-theme-toggle-div {
+  background: var(--background-offwhite-color);
+  width: 85%;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: 10%;
+  border-radius: 6px;
+}
+
+.theme-container-flex {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
 
 
 /* =========== Responsive styles =========== */
