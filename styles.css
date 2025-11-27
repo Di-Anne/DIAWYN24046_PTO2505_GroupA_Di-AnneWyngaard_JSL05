@@ -24,7 +24,7 @@ body {
   margin: 0;
   display: flex; /*layout to span horizontally*/
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   background: var(--background-offwhite-color);
 }
 
@@ -50,6 +50,7 @@ body {
   justify-content: space-between;
   width: 300px; /*Side-nav-bar gets a fixed width*/
   height: 100vh;
+  overflow-y: auto; 
   border-right: 1px solid var(--border-grey-color); /*Grey divider between side-nav-bar and main-container */
   background-color: var(--background-white-color);
 }
@@ -152,7 +153,7 @@ body {
   padding-top: 15px;
   display: none;/* Hide when sidebar shows */
   position: fixed;
-  top: 704px;
+  top: 530px;
 }
 
 /* Hide Sidebar */
