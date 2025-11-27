@@ -152,7 +152,7 @@ body {
   padding-top: 15px;
   display: none;/* Hide when sidebar shows */
   position: fixed;
-  top: 800px;
+  top: 704px;
 }
 
 /* Hide Sidebar */
@@ -535,6 +535,10 @@ textarea {
 @media (max-width: 1023px) {
   .side-nav-bar {
     display: none; /* Hide side-nav-bar tablets and smaller screens*/
+  }
+
+  .nav-eyes {
+    display: none;
   }
 
   .favicon-mobile {
