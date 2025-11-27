@@ -11,11 +11,7 @@ export function openMobileMenuModal() {
     favicon.addEventListener('click', () => {
         mobileModal.showModal();
 
-        bodyBackgroundDiv.style.backgroundColor = "rgba(0, 0, 0, 0.3)";
-        bodyBackgroundDiv.style.zIndex = "2";
-        bodyBackgroundDiv.style.width = "100vh";
-        bodyBackgroundDiv.style.height = "100vh";
-        bodyElement.appendChild(bodyBackgroundDiv);
+       
         
     });
 }
