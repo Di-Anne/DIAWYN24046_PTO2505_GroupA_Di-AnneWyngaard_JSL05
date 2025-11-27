@@ -604,11 +604,11 @@ textarea {
   }
 
   .nav-eyes {
-    display: block;
+    display: none !important;
   }
 
   .favicon-mobile {
-    display: none;
+    display: block;
   }
 
   .main-tasks-container {
@@ -641,7 +641,6 @@ textarea {
   .loader {
     top: 50%;
     left: 45%; 
-    
   }
 }
 
@@ -651,7 +650,7 @@ textarea {
   }
 
   .nav-eyes {
-    display: none;
+    display: none !important;
   }
 
   .launch-title {
