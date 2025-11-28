@@ -12,8 +12,6 @@ async function initializeTaskBoard() {
     // This ensures loader completes before rendering tasks
     const storedTasks = await initTasks();
     console.log('Loaded from storage:', storedTasks);
-
-    //Theme
     changeTheme()
 
     removeExistingTaskDivs();
@@ -25,7 +23,7 @@ async function initializeTaskBoard() {
     editTaskHandler();
     openMobileMenuModal();
     closeMobileMenuModal();
-    
+
     hideSidebar();
     showSidebar(); 
 }

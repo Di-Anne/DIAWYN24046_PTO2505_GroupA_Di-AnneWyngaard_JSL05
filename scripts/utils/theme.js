@@ -1,10 +1,12 @@
-
 const themeToggle = document.getElementById('nav-theme-toggle');
 const themeToggleMobile = document.getElementById('mobile-nav-theme-toggle');
 const logoLight = document.getElementById('nav-logo');
 const logoDark = document.getElementById('nav-logo-dark');
 const body = document.body;
 
+/**
+ * Enable dark-mode by adding dark-mode classlist to body element and save theme preference to local storage
+ */
 function enableDarkmode() {
     body.classList.add('dark-mode');
     logoLight.style.display = "none";
@@ -15,6 +17,9 @@ function enableDarkmode() {
     if (themeToggleMobile) themeToggleMobile.checked = true;
 }
 
+/**
+ * Disable dark-mode by removing dark-mode classlist from body element and save theme preference to local storage
+ */
 function disableDarkmode() {
     body.classList.remove('dark-mode');
     logoLight.style.display = "block";

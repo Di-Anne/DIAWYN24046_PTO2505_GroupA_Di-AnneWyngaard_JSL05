@@ -3,7 +3,7 @@ import { removeExistingTaskDivs, renderTasks } from "../ui/render.js";
 import { resetForm } from "./form.js";
 
 /**
- * Add a new task
+ * Add a new task and save to local storage
  */
 export function addNewTask() {
     const modalNew = document.getElementById('addtask-modal')
