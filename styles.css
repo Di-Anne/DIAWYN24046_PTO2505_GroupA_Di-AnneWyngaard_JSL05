@@ -17,18 +17,14 @@
   --nav-theme-font-color: #635fc7;
 }
 
-
-
 .dark-mode {
-  --primary-color: rgb(62, 63, 78);
-  --secondary-color: rgb(32, 33, 44);
+  --primary-color: rgb(43, 44, 55);
+  --secondary-color: rgb(32,33,44);
   --primary-font-color: #fff;
 
   --nav-theme-background-color: #635fc7;
   --nav-theme-font-color: #fff;
 }
-
-  
 
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -138,7 +134,7 @@ body {
   height: 20px;
   border-radius: 25px;
   margin-top: 8px;
-  background-color: var(--primary-btn-color);
+  background-color: rgb(0, 1, 18);
   cursor: pointer;
 }
 
@@ -209,6 +205,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 35px 0 30px;
+  color: var(--primary-font-color);
   background-color: var(--primary-color);
   height: 97px;
   border-bottom: 1px solid rgb(228, 235, 250);
@@ -317,6 +314,7 @@ body {
 
 /* =========== Task Cards =========== */
 .task-div {
+  color: var(--primary-font-color);
   background-color: var(--primary-color);
   border-radius: 8px;
   display: flex;
@@ -343,6 +341,10 @@ dialog {
 /* Task modal heading */
 h3 {
   color: var(--primary-font-color);
+}
+
+#task-status, #addtask-status {
+  background-color: #ffffff;
 }
 
 #task-modal::backdrop {
@@ -556,7 +558,7 @@ textarea {
 
 /* Mobile nav-bar menu */
 .nav-bar-mobile-menu {
-  top: 10%;
+  top: 13%;
   left: 5%;
   border-radius: 8px;
   width: 90%;
