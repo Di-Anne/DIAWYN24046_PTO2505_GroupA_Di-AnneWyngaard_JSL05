@@ -26,7 +26,7 @@ Kanban board is a task management app which helps users manage their daily tasks
 
 ## 🔍 Closer look
 
-To get a deeper understanding of how the App was built, see brief attached code review: (https://mission-accomplished.netlify.app/)
+To get a deeper understanding of how the App was built, see brief attached code review: [Presentation Link](https://www.loom.com/share/5f5983d8e92345f48cfa4eaca44c2738)
 
 ### 🚀 Prerequisites
 
