@@ -3,7 +3,7 @@ import { closeTaskModal, newTaskModalHandler, editTaskHandler } from "./ui/modal
 import { initTasks } from "./utils/localStorage.js";
 import { hideSidebar, showSidebar } from "./utils/sidebar.js";
 import { openMobileMenuModal, closeMobileMenuModal } from "./ui/sidebarUI.js";
-import { changeTheme, changeThemeMobile } from "./utils/theme.js";
+import { changeTheme } from "./utils/theme.js";
 
 /**
  * Initializes task-board 
@@ -14,8 +14,7 @@ async function initializeTaskBoard() {
     console.log('Loaded from storage:', storedTasks);
 
     //Theme
-    changeTheme();
-    changeThemeMobile();
+    changeTheme()
 
     removeExistingTaskDivs();
     renderTasks(storedTasks);

@@ -10,54 +10,43 @@ function enableDarkmode() {
     logoLight.style.display = "none";
     logoDark.style.display = "block";
     localStorage.setItem('darkmode', 'active');
+    // Make both toggles reflect dark mode
+    if (themeToggle) themeToggle.checked = true;
+    if (themeToggleMobile) themeToggleMobile.checked = true;
 }
 
 function disableDarkmode() {
     body.classList.remove('dark-mode');
     logoLight.style.display = "block";
     logoDark.style.display = "none";
-    localStorage.setItem('darkmode', null);
+    localStorage.removeItem('darkmode');
+    if (themeToggle) themeToggle.checked = false;
+    if (themeToggleMobile) themeToggleMobile.checked = false;
 }
 
 /**
- * On toggle change for desktop screens: switch to dark-mode theme and save in localStorage
+ * Switch theme when toggle is clicked on desktop and mobile screens
  */
 
 export function changeTheme() {
-    themeToggle.addEventListener('change', () => {
-        if (themeToggle.checked) {
-            enableDarkmode();
-        } else {
-            disableDarkmode();
-        }
-    });
-}
-
-/**
- * On toggle change for smaller screens: switch to dark-mode theme and save in localStorage
- */
-export function changeThemeMobile() {
-    themeToggleMobile.addEventListener('change', () => {
-        if (themeToggle.checked) {
-            enableDarkmode();
-        } else {
-            disableDarkmode();
-        }
-    });
-}
-    
-window.addEventListener("load", function () {
-    const saved = localStorage.getItem('darkmode');
-    if (saved === 'active') {
-        body.classList.add('dark-mode');
-        logoLight.style.display = "none";
-        logoDark.style.display = "block";
-        // Also make sure your toggle checkbox is checked, if relevant:
-    if (themeToggle) themeToggle.checked = true;
-    } else {
-        body.classList.remove('dark-mode');
-        logoLight.style.display = "block";
-        logoDark.style.display = "none";
-    if (themeToggle) themeToggle.checked = false;
+    if (themeToggle) {
+        themeToggle.addEventListener('change', () => {
+            if (themeToggle.checked) enableDarkmode();
+            else disableDarkmode();
+        });
     }
-});
+    if (themeToggleMobile) {
+        themeToggleMobile.addEventListener('change', () => {
+            if (themeToggleMobile.checked) enableDarkmode();
+            else disableDarkmode();
+        });
+    }
+
+    // Retrive saved theme from local storage and display after the page refreshes/ loads
+    const storedTheme = localStorage.getItem('darkmode');
+    if (storedTheme === 'active') {
+        enableDarkmode();
+    } else {
+        disableDarkmode();
+    }
+}

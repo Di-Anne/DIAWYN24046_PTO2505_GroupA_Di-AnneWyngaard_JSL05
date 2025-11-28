@@ -227,6 +227,7 @@ body {
 
 /* =========== Card grid =========== */
 .loader {
+  color: var(--primary-font-color);
   display: none; /* Hidden by default */
   position: fixed;
   top: 50%;
