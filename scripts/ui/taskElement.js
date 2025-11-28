@@ -1,6 +1,5 @@
 import { openTaskModal } from "./modalHandlers.js";
 
-
 /**
  * Creates a single task div element in DOM
  * @param {Object} task - task object
