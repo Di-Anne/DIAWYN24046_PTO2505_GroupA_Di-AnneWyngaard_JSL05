@@ -12,13 +12,14 @@
     <title>Kanban Task Management</title>
     <script type="module" src="scripts/main.js" defer></script>
   </head>
-  <body>
+  <body class="dark-mode-main">
     <div class="mobile-modal-overlay" id="mobile-modal-overlay"></div>
     <!-- Navigation Sidebar: Contains the logo, navigation links for boards, and theme toggle. -->
     <nav class="side-nav-bar" id="side-nav-bar">
       <div>
         <div class="nav-logo-div">
           <img class="nav-logo" src="./assets/logo-light.svg"/>
+          <img class="nav-logo-dark" src="./assets/logo-dark.svg"/>
         </div>
         <div class="nav-boards-div">
           <p class="nav-all-boards">All boards (1)</p>
@@ -27,11 +28,11 @@
       </div>
       <div class="nav-features-div" id="nav-features-div">
         <div class="nav-theme-toggle-div">
-          <div class="sun">☀️</div>
+          <div class="sun">🌞</div>
           <div>
             <input class="nav-theme-toggle" id="nav-theme-toggle" type="checkbox">
           </div>
-          <div class="moon">🌑</div>
+          <div class="moon">🌚</div>
         </div>
         <div class="nav-hide" id="nav-hide">
           🚫 Hide Sidebar

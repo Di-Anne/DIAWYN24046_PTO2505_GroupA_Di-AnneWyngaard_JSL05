@@ -16,6 +16,19 @@
   --delete-btn-red: rgb(234, 85, 85);
 }
 
+
+
+.dark-mode-main {
+  --main-text-color: #fff;
+  --subheading-grey-color: rgb(130, 143, 163);
+  --border-grey-color: rgb(228, 235, 250);
+  --main-theme-color: rgb(99, 95, 199);
+  --background-white-color: rgb(43, 44, 55);
+  --background-offwhite-color: rgb(32, 33, 44);
+}
+
+  
+
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
   color: var(--main-text-color);
@@ -78,7 +91,7 @@ body {
   font-weight: bold;
   border: none;
   font-size: 15px;
-  color: var(--background-white-color);
+  color: #fff;
   display: flex;
   align-items: center; /*align launch title and toggle*/
   padding: 28px 12px 28px 40px; /*Space around launch title to align with All-boards title*/
@@ -113,6 +126,8 @@ body {
 
 .nav-theme-toggle {
   -webkit-appearance: none; /* hide the default checkbox */
+  -moz-appearance: none;
+  appearance: none;
   position: relative; /* for circle inside toggle to be positioned relative to toggle*/
   width: 40px;
   height: 20px;
@@ -124,7 +139,7 @@ body {
 
 .nav-theme-toggle::after {
   content: "";
-  background-color: var(--background-white-color);
+  background-color: #fff;
   position: absolute;
   top: 50%;
   left: 30%;
@@ -136,7 +151,7 @@ body {
 }
 
 .nav-theme-toggle:checked {
-  background-color: var(--light-purple-color);
+  background-color: rgb(0, 1, 18);
 }
 
 .nav-theme-toggle:checked::after {
@@ -203,6 +218,7 @@ body {
   height: 30px;
   margin-right: 10px; /*Space between favicon and launch title*/
   display: none; /*Favicon hidden on desktop screens*/
+  cursor: pointer;
 }
 
 
@@ -405,7 +421,7 @@ form select {
   border-radius: 100px;
   width: 164px;
   height: 48px;
-  color: var(--background-white-color);
+  color: #fff;
   background: var(--main-theme-color);
   cursor: pointer;
 }

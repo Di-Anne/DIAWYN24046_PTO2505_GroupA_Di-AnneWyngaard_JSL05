@@ -2,7 +2,7 @@ import { removeExistingTaskDivs, renderTasks } from "./ui/render.js";
 import { closeTaskModal, newTaskModalHandler, editTaskHandler } from "./ui/modalHandlers.js";
 import { initTasks } from "./utils/localStorage.js";
 import { hideSidebar, showSidebar } from "./utils/sidebar.js";
-import { openMobileMenuModal, closeMobileMenuModal } from "./ui/sidebarUI.js"
+import { openMobileMenuModal, closeMobileMenuModal } from "./ui/sidebarUI.js";
 
 /**
  * Initializes task-board 

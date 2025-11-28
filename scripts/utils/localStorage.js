@@ -48,24 +48,38 @@ export function saveTasksToStorage(tasks) {
 
 /**
  * Async-init version. Should be called on App start
- * If no tasks in localStorage, fetch from API once
+ * Shows loader, checks storage, fetches from API if storage is empty
  * Otherwise, use existing storage
  * @returns {Array<Object>} the array of tasks
  */
 export async function initTasks() {
-  const stored = localStorage.getItem("tasks");
-  showLoader();   // show your loader UI
+  showLoader();   
   await delay(250);  // give browser a moment to paint the loader
 
+  const stored = localStorage.getItem("tasks");
+  let tasks;
+
   if (!stored) {
+    // No tasks -> fetch from API
     try {
       await fetchInitialData();
-    } catch (err) {
-      console.warn("API fetch failed — will use empty list or stored data", err);
+    } catch (error) {
+      console.warn("API fetch failed — will use empty list", error);
+    }
+  } else {
+    try {
+      const parsed = JSON.parse(stored);
+      if (!Array.isArray(parsed) || parsed.length === 0) {
+        // storage empty or invalid -> fetch from API
+        await fetchInitialData();
+      }
+      // But if storage is not empty -> keep it
+    } catch (error) {
+      console.warn("Could not parse tasks from storage- refetching from API", error);
+      await fetchInitialData();
     }
   }
-
-  const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+  tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
   hideLoader();  // hide loader when done
   return tasks;
 }

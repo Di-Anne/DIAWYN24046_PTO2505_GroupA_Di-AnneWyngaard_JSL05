@@ -27,5 +27,3 @@ export async function fetchInitialData() {
     } 
 }
 
-// Empty array for holding API tasks in local storage
-export const apiTasks = []
