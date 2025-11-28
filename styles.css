@@ -171,7 +171,8 @@ body {
   padding-top: 15px;
   display: none; /* Hide when sidebar shows */
   position: absolute;
-  top: 535px;
+  z-index: 2000;
+  top: 615px;
   cursor: pointer;
 }
 
