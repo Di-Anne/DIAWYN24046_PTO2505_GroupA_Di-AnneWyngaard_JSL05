@@ -3,42 +3,37 @@
 }
 
 :root {
-  --main-text-color: rgb(0, 1, 18);
-  --subheading-grey-color: rgb(130, 143, 163);
-  --border-grey-color: rgb(228, 235, 250);
-  --main-theme-color: rgb(99, 95, 199);
-  --background-white-color: #fff;
-  --background-offwhite-color: rgb(244, 247, 253);
+  --primary-color: #ffffff;
+  --secondary-color: #f4f7fd;
+  --primary-font-color: #000000;
+  --secondary-font-color: #828fa3;
+  --primary-btn-color: #635fc7;
+  --delete-btn-red: rgb(234, 85, 85);
   --todo-dot-color: #49c4e5;
   --doing-dot-color: #8471f2;
-  --light-purple-color:  rgb(168, 164, 255);
   --done-dot-color: #67e2ae;
-  --delete-btn-red: rgb(234, 85, 85);
+
+  --nav-theme-background-color: #f4f7fd;
+  --nav-theme-font-color: #635fc7;
 }
 
 
 
-.dark-mode-main {
-  --main-text-color: #fff;
-  --subheading-grey-color: rgb(130, 143, 163);
-  --border-grey-color: rgb(228, 235, 250);
-  --main-theme-color: rgb(99, 95, 199);
-  --background-white-color: rgb(43, 44, 55);
-  --background-offwhite-color: rgb(32, 33, 44);
+.dark-mode {
+  
 }
 
   
 
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
-  color: var(--main-text-color);
   font-size: 15px;
   font-weight: bold;
   margin: 0;
   display: flex; /*layout to span horizontally*/
   width: 100%;
   height: 100vh;
-  background: var(--background-offwhite-color);
+  background: var(--secondary-color);
   position: relative;
 }
 
@@ -52,7 +47,7 @@ body {
 .done-title {
   font-size: 12px;
   letter-spacing: 2.4px;
-  color: var(--subheading-grey-color);
+  color: var(--secondary-font-color);
   text-transform: uppercase;
 }
 
@@ -65,8 +60,8 @@ body {
   width: 300px; /*Side-nav-bar gets a fixed width*/
   height: 100vh;
   overflow-y: auto; 
-  border-right: 1px solid var(--border-grey-color); /*Grey divider between side-nav-bar and main-container */
-  background-color: var(--background-white-color);
+  border-right: 1px solid rgb(228, 235, 250); /*Grey divider between side-nav-bar and main-container */
+  background-color: var(--primary-color);
 }
 
 .nav-logo-div {
@@ -80,6 +75,7 @@ body {
 .nav-boards-div {
   display: flex;
   flex-direction: column;
+  color: var(--primary-font-color);
 }
 
 .nav-all-boards {
@@ -97,7 +93,7 @@ body {
   padding: 28px 12px 28px 40px; /*Space around launch title to align with All-boards title*/
   width: 276px;
   height: 48px;
-  background: var(--main-theme-color);
+  background: var(--primary-btn-color);
   border-top-right-radius: 100px;
   border-bottom-right-radius: 100px;
   cursor: pointer;
@@ -113,7 +109,7 @@ body {
 
 /* Theme-toggle */
 .nav-theme-toggle-div {
-  background: var(--background-offwhite-color);
+  background: var(--nav-theme-background-color);
   width: 250px;
   height: 48px;
   display: flex;
@@ -133,10 +129,11 @@ body {
   height: 20px;
   border-radius: 25px;
   margin-top: 8px;
-  background-color: var(--main-theme-color);
+  background-color: var(--primary-btn-color);
   cursor: pointer;
 }
 
+/* Cicle inside theme toggle */
 .nav-theme-toggle::after {
   content: "";
   background-color: #fff;
@@ -160,7 +157,7 @@ body {
 
 /* Show Sidebar */
 .nav-eyes {
-  background-color: var(--light-purple-color);
+  background-color: rgb(168, 164, 255);
   width: 56px;
   height: 48px;
   border-top-right-radius: 100px;
@@ -176,13 +173,13 @@ body {
 /* Hide Sidebar */
 .nav-hide {
   font-family: inherit;
-  color: var(--main-theme-color);
+  color: var(--nav-theme-font-color);
   display: flex;
   align-items: center; 
   justify-content: center; 
   width: 276px;
   height: 48px;
-  background: var(--background-offwhite-color);
+  background: var(--nav-theme-background-color);
   border-top-right-radius: 100px;
   border-bottom-right-radius: 100px;
   margin-bottom: 15px;
@@ -203,9 +200,9 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 35px 0 30px;
-  background-color: var(--background-white-color);
+  background-color: var(--primary-color);
   height: 97px;
-  border-bottom: 1px solid var(--border-grey-color);
+  border-bottom: 1px solid rgb(228, 235, 250);
 }
 
 .launch-header-div {
@@ -311,7 +308,7 @@ body {
 
 /* =========== Task Cards =========== */
 .task-div {
-  background-color: var(--background-white-color);
+  background-color: var(--primary-color);
   border-radius: 8px;
   display: flex;
   align-items: center; /*center task titles in center of card*/
@@ -333,7 +330,12 @@ dialog {
   background: none;
 }
 
-/* Style the modal background */
+/*** Style the modal background ***/
+/* Task modal heading */
+h3 {
+  color: var(--primary-font-color);
+}
+
 #task-modal::backdrop {
   background: rgba(0, 0, 0, 0.6);
 }
@@ -346,7 +348,7 @@ dialog {
   width: 90%;
   max-width: 600px;
   padding: 24px;
-  background-color: var(--background-white-color);
+  background-color: var(--primary-color);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -389,7 +391,7 @@ form label {
   font-size: 0.75rem;
   margin-top: 12px;
   margin-bottom: 4px;
-  color: var(--subheading-grey-color);
+  color: var(--secondary-font-color);
 }
 
 form input,
@@ -397,7 +399,7 @@ form textarea,
 form select {
   width: 100%;
   padding: 8px 10px;
-  border: 1px solid var(--subheading-grey-color);
+  border: 1px solid var(--secondary-font-color);
   border-radius: 4px;
   font-family: inherit;
   font-size: 0.8125em;
@@ -422,7 +424,7 @@ form select {
   width: 164px;
   height: 48px;
   color: #fff;
-  background: var(--main-theme-color);
+  background: var(--primary-btn-color);
   cursor: pointer;
 }
 
@@ -446,7 +448,7 @@ form select {
   max-width: 600px;
   padding: 24px;
   gap: 20px;
-  background-color: var(--background-white-color);
+  background-color: var(--primary-color);
   font-weight: 500;
   font-size: 14px;
   border-radius: 10px;
@@ -455,8 +457,8 @@ form select {
 }
 
 .btn-create-task {
-  background-color: var(--main-theme-color);
-  color: var(--background-white-color);
+  background-color: var(--primary-btn-color);
+  color: #ffffff;
   border-radius: 30px;
   border: none;
   font-size: 16px;
@@ -470,7 +472,7 @@ form select {
 
 textarea {
   font-size: 16px;
-  color: var(--main-text-color);
+  color: #000000;
   height: 90px;
   padding: 10px;
   border-radius: 4px;
@@ -486,8 +488,8 @@ textarea {
 
 .save-btn, .delete-btn {
   margin-top: 30px;
-  background-color: var(--main-theme-color);
-  color: var(--background-white-color);
+  background-color: var(--primary-btn-color);
+  color: #ffffff;
   border: none;
   border-radius: 30px;
   font-family: inherit;
@@ -518,7 +520,8 @@ textarea {
   width: 80%;
   max-width: 500px;
   padding: 35px;
-  background-color: var(--background-white-color);
+  color: var(--primary-font-color);
+  background-color: var(--primary-color);
   font-weight: 500;
   font-size: 14px;
   border-radius: 10px;
@@ -527,8 +530,8 @@ textarea {
 
 .btn-delete-confirm, .btn-delete-cancel {
   margin-top: 10px;
-  background-color: var(--subheading-grey-color);
-  color: var(--background-white-color);
+  background-color: #828fa3;
+  color: #ffffff;
   border: none;
   border-radius: 30px;
   font-family: inherit;
@@ -551,7 +554,7 @@ textarea {
   height: 210px;
   padding: 24px;
   padding-left: 0;
-  background-color: var(--background-white-color);
+  background-color: var(--primary-color);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   position: fixed;
   display: flex;
@@ -570,7 +573,7 @@ textarea {
 }
 
 .mobile-nav-theme-toggle-div {
-  background: var(--background-offwhite-color);
+  background: var(--nav-theme-background-color);
   width: 85%;
   height: 48px;
   display: flex;
