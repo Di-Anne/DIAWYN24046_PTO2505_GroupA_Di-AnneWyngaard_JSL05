@@ -25,20 +25,31 @@ export function removeExistingTaskDivs() {
     });
 }
 
-const priorityRank = { high: 3, medium: 2, low: 1 };
+const priorityRank = { 
+    high: 3, 
+    medium: 2, 
+    low: 1 
+};
 
 /**
- * Renders ALL tasks to their appropriate columns
+ * Loop through tasks' statuses and sort tasks by priority from high to low
  */
  export function renderTasks(tasks) {
-    const columnStatus = ['todo', 'doing', 'done'];
-    tasks.forEach((task) => {
-        const taskContainer = getTaskContainerByStatus(task.status);
+    // Gather all the task statuses
+    const statuses = [...new Set(tasks.map(t => t.status))];
+
+    statuses.forEach((status) => {
+        const taskContainer = getTaskContainerByStatus(status);
         if (!taskContainer) return;
-        const taskDiv = createTaskElement(task);
-        taskContainer.appendChild(taskDiv);
+
+        // filter tasks' statuses and sort by priority from high to low
+        const tasksWithStatus = tasks.filter(t => t.status === status)
+        .sort((a, b) => (priorityRank[b.priority] || 0) - (priorityRank[a.priority] || 0));
+       
+        // After sorting by priority append to container and render
+        tasksWithStatus.forEach(task => {
+            const taskDiv = createTaskElement(task);
+            taskContainer.appendChild(taskDiv);
     });
+  });
 }
-
-
-
