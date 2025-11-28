@@ -46,3 +46,18 @@ export function changeThemeMobile() {
     });
 }
     
+window.addEventListener("load", function () {
+    const saved = localStorage.getItem('darkmode');
+    if (saved === 'active') {
+        body.classList.add('dark-mode');
+        logoLight.style.display = "none";
+        logoDark.style.display = "block";
+        // Also make sure your toggle checkbox is checked, if relevant:
+    if (themeToggle) themeToggle.checked = true;
+    } else {
+        body.classList.remove('dark-mode');
+        logoLight.style.display = "block";
+        logoDark.style.display = "none";
+    if (themeToggle) themeToggle.checked = false;
+    }
+});
