@@ -26,7 +26,6 @@ async function initializeTaskBoard() {
     openMobileMenuModal();
     closeMobileMenuModal();
     
-
     hideSidebar();
     showSidebar(); 
 }

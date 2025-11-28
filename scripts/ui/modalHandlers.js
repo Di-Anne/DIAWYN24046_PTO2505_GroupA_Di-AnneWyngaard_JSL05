@@ -61,10 +61,11 @@ export function newTaskModalHandler() {
         const title = document.getElementById("task-title").value.trim();
         const description = document.getElementById("task-descrip").value.trim();
         const status = document.getElementById("task-status").value.trim();
+        const priority = document.getElementById('add-priority').value.trim();
 
         if(currentEditingTaskId) {
             // Editing existing task
-            editTask(currentEditingTaskId, {title, description, status});
+            console.log(editTask(currentEditingTaskId, {title, description, status, priority}));
         } else {
             //Add new task
             addNewTask();

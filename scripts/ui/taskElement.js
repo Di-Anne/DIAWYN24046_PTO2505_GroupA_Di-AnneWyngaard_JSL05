@@ -9,9 +9,33 @@ import { openTaskModal } from "./modalHandlers.js";
 export function createTaskElement(task) {
     const taskDiv = document.createElement('div');
     taskDiv.className = "task-div";
-    taskDiv.textContent = task.title;
     taskDiv.dataset.taskId = task.id;
 
+    // Title of card
+    const titleElement = document.createElement('div');
+    titleEl.className = 'task-title';
+    titleEl.textContent = task.title;
+    taskDiv.appendChild(titleElement);
+
+    // Priority dot (only if task.priority exists)
+    if (task.priority) {
+      const dot = document.createElement('span');
+      dot.classList.add('priority-dot');
+      // Add colour class depending on priority value
+      if (task.priority === 'high') {
+        dot.classList.add('high');
+      } else if (task.priority === 'medium') {
+        dot.classList.add('medium');
+      } else if (task.priority === 'low') {
+        dot.classList.add('low');
+      } else {
+        // optional: fallback class
+        dot.classList.add('low');
+      }
+      taskDiv.appendChild(dot);
+    }
+
+    // Click listener to open task modal
     taskDiv.addEventListener('click', () => {
         openTaskModal(task);
     });
