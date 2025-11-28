@@ -632,13 +632,11 @@ textarea {
 /** Priority dots **/
 .priority-dot {
   position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 12px;
-  height: 12px;
+  top: 40%;
+  right: 5%;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
-  /* default colour */
-  background-color: gray;
 }
 
 /* high, medium, low choices */
@@ -651,7 +649,6 @@ textarea {
 .priority-dot.low {
   background-color: green;
 }
-
 
 
 

@@ -25,12 +25,16 @@ export function removeExistingTaskDivs() {
     });
 }
 
+const priorityRank = { high: 3, medium: 2, low: 1 };
+
 /**
  * Renders ALL tasks to their appropriate columns
  */
  export function renderTasks(tasks) {
+    const columnStatus = ['todo', 'doing', 'done'];
     tasks.forEach((task) => {
         const taskContainer = getTaskContainerByStatus(task.status);
+        if (!taskContainer) return;
         const taskDiv = createTaskElement(task);
         taskContainer.appendChild(taskDiv);
     });

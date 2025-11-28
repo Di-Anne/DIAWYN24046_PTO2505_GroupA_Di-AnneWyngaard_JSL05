@@ -13,8 +13,8 @@ export function createTaskElement(task) {
 
     // Title of card
     const titleElement = document.createElement('div');
-    titleEl.className = 'task-title';
-    titleEl.textContent = task.title;
+    titleElement.className = 'task-title';
+    titleElement.textContent = task.title;
     taskDiv.appendChild(titleElement);
 
     // Priority dot (only if task.priority exists)

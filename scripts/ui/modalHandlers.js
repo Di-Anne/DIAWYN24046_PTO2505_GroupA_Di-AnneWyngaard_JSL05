@@ -65,7 +65,7 @@ export function newTaskModalHandler() {
 
         if(currentEditingTaskId) {
             // Editing existing task
-            console.log(editTask(currentEditingTaskId, {title, description, status, priority}));
+            editTask(currentEditingTaskId, {title, description, status, priority});
         } else {
             //Add new task
             addNewTask();
@@ -80,8 +80,10 @@ export function editTaskHandler() {
         const title = document.getElementById("task-title").value.trim();
         const description = document.getElementById("task-descrip").value.trim();
         const status = document.getElementById("task-status").value.trim();
+        const priority = document.getElementById("priority").value;
+
         if (currentEditingTaskId != null) {
-            editTask(currentEditingTaskId, {title, description, status});
+            editTask(currentEditingTaskId, {title, description, status, priority});
         } 
     });
 }
