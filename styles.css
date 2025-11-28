@@ -172,7 +172,7 @@ body {
   display: none; /* Hide when sidebar shows */
   position: absolute;
   z-index: 2000;
-  top: 630px;
+  top: 80%;
   cursor: pointer;
 }
 
