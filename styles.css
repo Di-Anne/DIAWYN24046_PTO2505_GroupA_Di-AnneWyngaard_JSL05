@@ -20,7 +20,12 @@
 
 
 .dark-mode {
-  
+  --primary-color: rgb(62, 63, 78);
+  --secondary-color: rgb(32, 33, 44);
+  --primary-font-color: #fff;
+
+  --nav-theme-background-color: #635fc7;
+  --nav-theme-font-color: #fff;
 }
 
   
@@ -70,6 +75,10 @@ body {
 
 .nav-logo {
   width: 100%;
+}
+
+.nav-logo-dark {
+  display: none;
 }
 
 .nav-boards-div {
