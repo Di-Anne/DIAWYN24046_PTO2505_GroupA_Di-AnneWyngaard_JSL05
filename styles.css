@@ -633,8 +633,8 @@ textarea {
 /** Priority dots **/
 .priority-dot {
   position: absolute;
-  top: 35%;
-  right: 5%;
+  top: 37%;
+  right: 2%;
   width: 15px;
   height: 15px;
   border-radius: 50%;
